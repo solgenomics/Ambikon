@@ -1,0 +1,44 @@
+----
+presentation_topic: Ambikon Intro
+presentation_title: Ambikon - Integrating Web Applications
+presentation_place: NESCent, Durham, NC
+presentation_date: March 6, 2011
+----
+
+----
+= The Unsolved Problems
+
+* real coders (CS degree or equiv. XP) are extremely scarce
+** software is mostly prototype-quality
+** tends to be hard to keep running
+** people move on, technical debt accumulates
+** all these people know and/or like different tools
+
+* lots of web apps, all different
+* within your organization, people develop apps and move on
+
+----
+= All these apps!  And more to come!
+
+* GBrowse - Olde Schoole Perle
+* Mimosa - Modern Perl
+* Drupal / Tripal - Drupal and PHP
+* Galaxy - Python
+* JBrowse - Javascript
+* InterMine - Perl, Java, (?)
+* Ergatis - Perl in the front, Java in the back
+* Pathway Tools - Lisp with own web server
+* BioMart - Perl
+* CMap - Olde Schoole Perle
+* *Your Hacked-Up Stuff* - who knows!
+
+----
+= Existing methods of integration
+
+* hard-coded links
+* Perl callbacks in conf
+* iframes
+* proxy by *shelling out to |curl| in PHP*
+* ad-hoc web services
+* semantic web services
+
