@@ -4,6 +4,33 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use MooseX::Types::URI 'Uri';
 
+# tweak buildargs to put a copy of the complete config in our config
+# attr
+around 'BUILDARGS' => sub {
+    my $orig  = shift;
+    my $class = shift;
+
+    if ( @_ == 1 ) {
+        my ( $args ) = @_;
+        return $class->$orig({ %$args, config => $args });
+    } else {
+        my %args = @_;
+        return $class->$orig({ @_, config => \%args });
+    }
+};
+
+=attr config
+
+Hashref of all the configuration data for this subsite.
+
+=cut
+
+has 'config' => (
+   is  => 'ro',
+   isa => 'HashRef',
+   required => 1,
+  );
+
 =attr shortname
 
 Shortname of the subsite, with no whitespace.
