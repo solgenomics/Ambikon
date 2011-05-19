@@ -35,6 +35,8 @@ has 'config' => (
 
 Shortname of the subsite, with no whitespace.
 
+Example: 'sgn', or 'gbrowse'.
+
 =cut
 
 has 'shortname' => (
@@ -45,7 +47,7 @@ has 'shortname' => (
 
 =attr name
 
-Optional longer name of the subsite.  Defaults to value of C<shortname>.
+Optional longer name of the subsite.  Defaults to value of L</shortname>.
 
 =cut
 
@@ -57,7 +59,9 @@ has 'name' => (
 
 =attr internal_url
 
-The base URL where Ambikon will access this subsite.
+L<URI> object for the base URL where Ambikon will access this subsite.
+
+Example: http://localhost:3030/foo
 
 =cut
 
@@ -70,7 +74,9 @@ has 'internal_url' => (
 
 =attr external_path
 
-Relative path where this subsite is accessed.
+Relative path where this subsite is accessed by clients.
+
+Example: C</gbrowse>
 
 =cut
 
