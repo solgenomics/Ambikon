@@ -52,10 +52,11 @@ Optional longer name of the subsite.  Defaults to value of L</shortname>.
 =cut
 
 has 'name' => (
-    is => 'ro',
-    isa => 'Str',
-    default => sub { shift->shortname },
+    is   => 'ro',
+    isa  => 'Str',
+    lazy_build => 1,
 );
+sub _build_name { shift->shortname }
 
 =attr internal_url
 
