@@ -16,8 +16,6 @@ my $ss = Ambikon::Subsite->new(
 can_ok $ss, qw/shortname name internal_url external_path alias/;
 
 is( $ss->alias->[0], 'fogger', 'alias coercion works' );
-
-
-
+is( ref( $ss->TO_JSON ), 'HASH', 'TO_JSON makes a hashref' );
 
 done_testing;

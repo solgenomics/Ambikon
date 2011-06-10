@@ -118,5 +118,20 @@ has 'external_path' => (
     required => 1,
 );
 
+sub TO_JSON {
+    my ( $self ) = @_;
+
+    return {
+        ( map { $_ => ''.$self->$_ } qw(
+            external_path
+            internal_url
+            name
+            shortname
+          )
+        ),
+        alias => $self->alias,
+    };
+}
+
 __PACKAGE__->meta->make_immutable;
 1;
