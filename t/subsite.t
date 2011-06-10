@@ -10,9 +10,13 @@ my $ss = Ambikon::Subsite->new(
     name => 'Foo Special Tool',
     internal_url => 'http://localhost:2121',
     external_path => '/bonk',
+    alias  => 'fogger',
   );
 
-can_ok $ss, qw/shortname name internal_url external_path/;
+can_ok $ss, qw/shortname name internal_url external_path alias/;
+
+is( $ss->alias->[0], 'fogger', 'alias coercion works' );
+
 
 
 

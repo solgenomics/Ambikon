@@ -45,6 +45,32 @@ has 'shortname' => (
     required => 1,
   );
 
+=attr alias
+
+Arrayref of string aliases for the subsite.  Often used to categorize
+subsites by their function.
+
+=cut
+
+{
+  my $at = subtype 'alias_list', as 'ArrayRef[Str]';
+  coerce $at,
+    from 'Str',
+    via { [ $_ ] };
+
+  has 'alias' => (
+     is      => 'ro',
+     isa     => $at,
+     traits  => ['Array'],
+     default => sub { [] },
+     coerce  => 1,
+     handles => {
+         add_alias   => 'push',
+         alias_list  => 'elements',
+     },
+  );
+}
+
 =attr name
 
 Optional longer name of the subsite.  Defaults to value of L</shortname>.
