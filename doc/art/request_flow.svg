@@ -798,10 +798,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8284272"
-     inkscape:cx="446.07429"
-     inkscape:cy="505.5412"
+     inkscape:cx="460.58755"
+     inkscape:cy="477.5092"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg2"
      showgrid="false"
      inkscape:window-width="1240"
      inkscape:window-height="875"
@@ -1157,22 +1157,6 @@
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
      inkscape:export-xdpi="299.91937"
      inkscape:export-ydpi="299.91937" />
-  <path
-     id="path4760"
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 343.41449,506.3314 -7.46224,7.17988 m -7.21179,-6.95549 7.46224,7.17988"
-     inkscape:connector-curvature="0"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 357.27966,598.17733 -7.46224,7.17988 m -7.21179,-6.95549 7.46224,7.17988"
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     id="path4765"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
   <text
      xml:space="preserve"
      style="font-size:13.15254974px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
@@ -1188,22 +1172,6 @@
        x="411.42963"
        y="554.28711"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans">~ 10ms</tspan></text>
-  <path
-     id="path4779"
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 396.95942,604.27456 -7.46224,-7.17988 m -7.21179,6.95549 7.46224,-7.17988"
-     inkscape:connector-curvature="0"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 409.78237,511.34541 -7.46224,-7.17988 m -7.21179,6.95549 7.46224,-7.17988"
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     id="path4781"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      d="m 333.87779,494.19516 13.9787,0 -3.77803,-11.33408 0,-5.66703 -4.91143,0 -0.3778,6.04484 z"
@@ -1251,4 +1219,32 @@
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
      inkscape:export-xdpi="299.91937"
      inkscape:export-ydpi="299.91937" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path3517"
+     d="m 346.05613,595.51973 6.50922,0 -2.81187,6.6437 z"
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     inkscape:transform-center-x="-3.75461" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path3517-6"
+     d="m 385.47733,601.19116 6.50922,0 -2.81187,-6.6437 z"
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     inkscape:transform-center-x="-3.75461" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path3517-9"
+     d="m 398.47486,515.57946 6.50922,0 -2.81187,-6.6437 z"
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     inkscape:transform-center-x="-3.754605" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path3517-0"
+     d="m 332.97466,508.98755 6.50922,0 -2.81187,6.6437 z"
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     inkscape:transform-center-x="-3.75461" />
 </svg>
