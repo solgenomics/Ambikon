@@ -798,13 +798,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.6230982"
-     inkscape:cx="195.09659"
-     inkscape:cy="549.5869"
+     inkscape:cx="296.24551"
+     inkscape:cy="536.67707"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg2"
      showgrid="false"
-     inkscape:window-width="1078"
-     inkscape:window-height="770"
+     inkscape:window-width="1136"
+     inkscape:window-height="800"
      inkscape:window-x="41"
      inkscape:window-y="124"
      inkscape:window-maximized="0" />
@@ -816,7 +816,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1013,7 +1013,7 @@
            sodipodi:role="line" /></text>
     </g>
     <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:1.19637239000000006;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:1.19637239;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3760"
        width="222.3094"
        height="23.068253"
@@ -1026,11 +1026,11 @@
        inkscape:export-ydpi="299.91937"
        transform="matrix(0,-1,1,0,0,0)" />
     <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:0.99999982;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.8754918;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4916"
-       width="53.594955"
+       width="41.079792"
        height="216.58336"
-       x="60.43679"
+       x="72.95195"
        y="401.84647"
        inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
        inkscape:export-xdpi="299.91937"
@@ -1065,7 +1065,7 @@
        xml:space="preserve"
        style="font-size:25.67058754px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
        x="401.30356"
-       y="-31.704639"
+       y="-46.491177"
        id="text4422"
        sodipodi:linespacing="125%"
        transform="matrix(0,1,-1,0,0,0)"
@@ -1075,11 +1075,11 @@
          sodipodi:role="line"
          id="tspan4424"
          x="401.30356"
-         y="-31.704639">time</tspan></text>
+         y="-46.491177">time</tspan></text>
   </g>
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 72.86068,602.09542 -4.15583,3.02242 14.7343,11.71188 z"
+     d="m 84.720714,602.5575 -4.15583,3.02242 14.7343,11.71188 z"
      id="path3190"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
@@ -1103,14 +1103,14 @@
   <path
      inkscape:connector-curvature="0"
      id="path3192"
-     d="m 103.46268,602.09542 4.15583,3.02242 -14.7343,11.71188 z"
+     d="m 105.00295,602.24944 4.15582,3.02242 -14.734296,11.71188 z"
      style="fill:#ffffff;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
      inkscape:export-xdpi="299.91937"
      inkscape:export-ydpi="299.91937" />
   <g
      id="g4884"
-     transform="matrix(0.75560515,0,0,0.75560515,-189.71211,242.64444)"
+     transform="matrix(0.75560515,0,0,0.75560515,-182.78092,247.57329)"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
      inkscape:export-xdpi="299.91937"
      inkscape:export-ydpi="299.91937">
@@ -1123,7 +1123,7 @@
        sodipodi:rx="22.822147"
        sodipodi:ry="22.822147"
        d="m 382.99714,475.99921 c 0,12.60432 -10.21783,22.82214 -22.82215,22.82214 -12.60433,0 -22.82215,-10.21782 -22.82215,-22.82214 0,-12.60433 10.21782,-22.82215 22.82215,-22.82215 12.60432,0 22.82215,10.21782 22.82215,22.82215 z"
-       transform="translate(7.2396582,-9.1340145)"
+       transform="matrix(0.63778367,0,0,0.65723609,137.14439,149.41354)"
        inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
        inkscape:export-xdpi="299.91937"
        inkscape:export-ydpi="299.91937" />
@@ -1136,7 +1136,7 @@
        sodipodi:rx="3.3195851"
        sodipodi:ry="3.3195851"
        d="m 366.81415,463.9657 c 0,1.83335 -1.48623,3.31958 -3.31958,3.31958 -1.83336,0 -3.31959,-1.48623 -3.31959,-3.31958 0,-1.83336 1.48623,-3.31959 3.31959,-3.31959 1.83335,0 3.31958,1.48623 3.31958,3.31959 z"
-       transform="matrix(0.49999998,0,0,0.49999998,177.29366,225.15812)"
+       transform="matrix(0.41805066,0,0,0.41805066,208.86326,265.75952)"
        inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
        inkscape:export-xdpi="299.91937"
        inkscape:export-ydpi="299.91937" />
@@ -1149,12 +1149,12 @@
        id="path4910"
        style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        sodipodi:type="arc"
-       transform="matrix(0.49999998,0,0,0.49999998,192.04366,223.65812)"
+       transform="matrix(0.41805066,0,0,0.41805066,220.38037,265.11691)"
        inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
        inkscape:export-xdpi="299.91937"
        inkscape:export-ydpi="299.91937" />
     <path
-       transform="matrix(0.62062477,0,0,0.55305684,169.47829,219.44708)"
+       transform="matrix(0.51890521,0,0,0.46241157,200.49421,261.59606)"
        sodipodi:open="true"
        sodipodi:end="2.687807"
        sodipodi:start="0.41887902"
@@ -1172,7 +1172,7 @@
   </g>
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 70.97166,607.38465 -9.44506,8.31166"
+     d="M 83.220343,607.18278 76.386567,617.7465"
      id="path3194"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
@@ -1180,7 +1180,7 @@
      inkscape:export-ydpi="299.91937" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 104.21829,608.14026 6.80045,7.93385"
+     d="m 107.5959,607.20427 4.97407,9.18971"
      id="path3196"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
@@ -1498,23 +1498,9 @@
        y="469.67126">API</tspan></text>
   <text
      xml:space="preserve"
-     style="font-size:8.77433681px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
-     x="237.04581"
-     y="554.1355"
-     id="text4323-4"
-     sodipodi:linespacing="125%"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937"><tspan
-       sodipodi:role="line"
-       id="tspan4325-1"
-       x="237.04581"
-       y="554.1355">API response</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:32.73051453px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
-     x="231.27184"
-     y="522.73566"
+     style="font-size:13.4313221px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
+     x="220.94746"
+     y="505.08932"
      id="text4323-7"
      sodipodi:linespacing="125%"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
@@ -1522,8 +1508,8 @@
      inkscape:export-ydpi="299.91937"><tspan
        sodipodi:role="line"
        id="tspan4325-0"
-       x="231.27184"
-       y="522.73566">API</tspan></text>
+       x="220.94746"
+       y="505.08932">API (in parallel)</tspan></text>
   <g
      transform="matrix(-1,0,0,1,510.98468,164)"
      id="g4374"
@@ -1602,14 +1588,28 @@
      sodipodi:nodetypes="cc"
      inkscape:connector-curvature="0"
      id="path4426"
-     d="m 37.801892,463.63039 0,36.07852"
+     d="m 52.588428,463.63039 0,36.07852"
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   <path
      inkscape:export-ydpi="299.91937"
      inkscape:export-xdpi="299.91937"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
      inkscape:connector-curvature="0"
-     d="m 45.309542,490.74133 -7.46224,11.20335 m -7.21179,-10.85321 7.46224,11.20335"
+     d="m 60.096078,490.74133 -7.46224,11.20335 m -7.21179,-10.85321 7.46224,11.20335"
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      id="path4428" />
+  <text
+     xml:space="preserve"
+     style="font-size:8.77433681px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
+     x="237.04581"
+     y="554.1355"
+     id="text4323-4"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+     inkscape:export-xdpi="299.91937"
+     inkscape:export-ydpi="299.91937"><tspan
+       sodipodi:role="line"
+       id="tspan4325-1"
+       x="237.04581"
+       y="554.1355">API response</tspan></text>
 </svg>

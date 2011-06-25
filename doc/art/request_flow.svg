@@ -799,14 +799,14 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8284272"
      inkscape:cx="446.07429"
-     inkscape:cy="477.25693"
+     inkscape:cy="505.5412"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1240"
      inkscape:window-height="875"
-     inkscape:window-x="227"
-     inkscape:window-y="75"
+     inkscape:window-x="520"
+     inkscape:window-y="92"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -816,7 +816,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1044,15 +1044,101 @@
        inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
        inkscape:export-xdpi="299.91937"
        inkscape:export-ydpi="299.91937" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.79899782px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 367.98421,483.10312 -4.39449,3.19599 15.58045,12.38446 z"
+       id="path3190-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+       inkscape:export-xdpi="299.91937"
+       inkscape:export-ydpi="299.91937" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3192-2"
+       d="m 389.43121,482.77736 4.39448,3.19599 -15.58046,12.38447 z"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.79899782px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+       inkscape:export-xdpi="299.91937"
+       inkscape:export-ydpi="299.91937" />
+    <g
+       id="g4884-4"
+       transform="matrix(0.79899778,0,0,0.79899778,85.120585,107.733)"
+       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+       inkscape:export-xdpi="299.91937"
+       inkscape:export-ydpi="299.91937">
+      <path
+         sodipodi:type="arc"
+         style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+         id="path4906-1"
+         sodipodi:cx="360.17499"
+         sodipodi:cy="475.99921"
+         sodipodi:rx="22.822147"
+         sodipodi:ry="22.822147"
+         d="m 382.99714,475.99921 c 0,12.60432 -10.21783,22.82214 -22.82215,22.82214 -12.60433,0 -22.82215,-10.21782 -22.82215,-22.82214 0,-12.60433 10.21782,-22.82215 22.82215,-22.82215 12.60432,0 22.82215,10.21782 22.82215,22.82215 z"
+         transform="matrix(0.63778367,0,0,0.65723609,137.14439,149.41354)"
+         inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
+         inkscape:export-xdpi="299.91937"
+         inkscape:export-ydpi="299.91937" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="path4908-6"
+         sodipodi:cx="363.49457"
+         sodipodi:cy="463.9657"
+         sodipodi:rx="3.3195851"
+         sodipodi:ry="3.3195851"
+         d="m 366.81415,463.9657 c 0,1.83335 -1.48623,3.31958 -3.31958,3.31958 -1.83336,0 -3.31959,-1.48623 -3.31959,-3.31958 0,-1.83336 1.48623,-3.31959 3.31959,-3.31959 1.83335,0 3.31958,1.48623 3.31958,3.31959 z"
+         transform="matrix(0.41805066,0,0,0.41805066,208.86326,265.75952)"
+         inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
+         inkscape:export-xdpi="299.91937"
+         inkscape:export-ydpi="299.91937" />
+      <path
+         d="m 366.81415,463.9657 c 0,1.83335 -1.48623,3.31958 -3.31958,3.31958 -1.83336,0 -3.31959,-1.48623 -3.31959,-3.31958 0,-1.83336 1.48623,-3.31959 3.31959,-3.31959 1.83335,0 3.31958,1.48623 3.31958,3.31959 z"
+         sodipodi:ry="3.3195851"
+         sodipodi:rx="3.3195851"
+         sodipodi:cy="463.9657"
+         sodipodi:cx="363.49457"
+         id="path4910-5"
+         style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc"
+         transform="matrix(0.41805066,0,0,0.41805066,220.38037,265.11691)"
+         inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
+         inkscape:export-xdpi="299.91937"
+         inkscape:export-ydpi="299.91937" />
+      <path
+         transform="matrix(0.51890521,0,0,0.46241157,200.49421,261.59606)"
+         sodipodi:open="true"
+         sodipodi:end="2.687807"
+         sodipodi:start="0.41887902"
+         d="m 335.12385,443.06997 c -3.63525,7.53684 -13.20118,10.92639 -21.36609,7.57077 -3.47573,-1.42845 -6.2951,-3.94165 -7.96296,-7.09821"
+         sodipodi:ry="14.938133"
+         sodipodi:rx="16.182978"
+         sodipodi:cy="436.99408"
+         sodipodi:cx="320.33997"
+         id="path4882-7"
+         style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:3.41374087;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc"
+         inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
+         inkscape:export-xdpi="299.91937"
+         inkscape:export-ydpi="299.91937" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.79899782px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 366.39767,487.99401 -7.22621,11.17037"
+       id="path3194-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+       inkscape:export-xdpi="299.91937"
+       inkscape:export-ydpi="299.91937" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.79899782px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 392.17306,488.01674 5.25972,9.71745"
+       id="path3196-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_xrefs.png"
+       inkscape:export-xdpi="299.91937"
+       inkscape:export-ydpi="299.91937" />
   </g>
-  <path
-     style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 363.7242,484.7501 -4.15583,3.02242 14.7343,11.71188 z"
-     id="path3190"
-     inkscape:connector-curvature="0"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
   <path
      id="path4591"
      d="m 650.05431,303.03385 c 0,0 0.849,-3.51 0,-4.699 -0.85,-1.189 -1.189,-1.981 -3.058,-2.548 -1.869,-0.567 -1.188,-0.454 -2.547,-0.396 -1.359,0.057 -2.492,0.792 -2.492,1.188 0,0 -0.849,0.057 -1.188,0.397 -0.34,0.34 -0.906,1.924 -0.906,2.321 0,0.397 0.283,3.058 0.566,3.624 l -0.337,0.113 c -0.283,3.283 1.132,3.68 1.132,3.68 0.509,3.058 1.019,1.756 1.019,2.548 0,0.792 -0.51,0.51 -0.51,0.51 0,0 -0.452,1.245 -1.584,1.698 -1.132,0.452 -7.416,2.886 -7.927,3.396 -0.511,0.511 -0.453,2.888 -0.453,2.888 h 26.947 c 0,0 0.059,-2.377 -0.452,-2.888 -0.512,-0.511 -6.796,-2.944 -7.928,-3.396 -1.132,-0.453 -1.584,-1.698 -1.584,-1.698 0,0 -0.51,0.282 -0.51,-0.51 0,-0.792 0.51,0.51 1.02,-2.548 0,0 1.414,-0.397 1.132,-3.68 h -0.34 z"
@@ -1115,92 +1201,6 @@
      d="m 409.78237,511.34541 -7.46224,-7.17988 m -7.21179,6.95549 7.46224,-7.17988"
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      id="path4781"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path3192"
-     d="m 394.3262,484.7501 4.15583,3.02242 -14.7343,11.71188 z"
-     style="fill:#ffffff;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
-  <g
-     id="g4884"
-     transform="matrix(0.75560515,0,0,0.75560515,101.15141,125.29912)"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937">
-    <path
-       sodipodi:type="arc"
-       style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       id="path4906"
-       sodipodi:cx="360.17499"
-       sodipodi:cy="475.99921"
-       sodipodi:rx="22.822147"
-       sodipodi:ry="22.822147"
-       d="m 382.99714,475.99921 c 0,12.60432 -10.21783,22.82214 -22.82215,22.82214 -12.60433,0 -22.82215,-10.21782 -22.82215,-22.82214 0,-12.60433 10.21782,-22.82215 22.82215,-22.82215 12.60432,0 22.82215,10.21782 22.82215,22.82215 z"
-       transform="translate(7.2396582,-9.1340145)"
-       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
-       inkscape:export-xdpi="299.91937"
-       inkscape:export-ydpi="299.91937" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4908"
-       sodipodi:cx="363.49457"
-       sodipodi:cy="463.9657"
-       sodipodi:rx="3.3195851"
-       sodipodi:ry="3.3195851"
-       d="m 366.81415,463.9657 c 0,1.83335 -1.48623,3.31958 -3.31958,3.31958 -1.83336,0 -3.31959,-1.48623 -3.31959,-3.31958 0,-1.83336 1.48623,-3.31959 3.31959,-3.31959 1.83335,0 3.31958,1.48623 3.31958,3.31959 z"
-       transform="matrix(0.49999998,0,0,0.49999998,177.29366,225.15812)"
-       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
-       inkscape:export-xdpi="299.91937"
-       inkscape:export-ydpi="299.91937" />
-    <path
-       d="m 366.81415,463.9657 c 0,1.83335 -1.48623,3.31958 -3.31958,3.31958 -1.83336,0 -3.31959,-1.48623 -3.31959,-3.31958 0,-1.83336 1.48623,-3.31959 3.31959,-3.31959 1.83335,0 3.31958,1.48623 3.31958,3.31959 z"
-       sodipodi:ry="3.3195851"
-       sodipodi:rx="3.3195851"
-       sodipodi:cy="463.9657"
-       sodipodi:cx="363.49457"
-       id="path4910"
-       style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       sodipodi:type="arc"
-       transform="matrix(0.49999998,0,0,0.49999998,192.04366,223.65812)"
-       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
-       inkscape:export-xdpi="299.91937"
-       inkscape:export-ydpi="299.91937" />
-    <path
-       transform="matrix(0.62062477,0,0,0.55305684,169.47829,219.44708)"
-       sodipodi:open="true"
-       sodipodi:end="2.687807"
-       sodipodi:start="0.41887902"
-       d="m 335.12385,443.06997 c -3.63525,7.53684 -13.20118,10.92639 -21.36609,7.57077 -3.47573,-1.42845 -6.2951,-3.94165 -7.96296,-7.09821"
-       sodipodi:ry="14.938133"
-       sodipodi:rx="16.182978"
-       sodipodi:cy="436.99408"
-       sodipodi:cx="320.33997"
-       id="path4882"
-       style="fill:#f1f1f1;fill-opacity:1;stroke:#000000;stroke-width:3.41374087;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       sodipodi:type="arc"
-       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/path4767.png"
-       inkscape:export-xdpi="299.91937"
-       inkscape:export-ydpi="299.91937" />
-  </g>
-  <path
-     style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 361.83518,490.03933 -9.44506,8.31166"
-     id="path3194"
-     inkscape:connector-curvature="0"
-     inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
-     inkscape:export-xdpi="299.91937"
-     inkscape:export-ydpi="299.91937" />
-  <path
-     style="fill:none;stroke:#000000;stroke-width:0.75560516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 395.08181,490.79494 6.80045,7.93385"
-     id="path3196"
-     inkscape:connector-curvature="0"
      inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/request_flow_normal_revproxy.png"
      inkscape:export-xdpi="299.91937"
      inkscape:export-ydpi="299.91937" />
