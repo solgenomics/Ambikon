@@ -3,7 +3,6 @@ package Ambikon::Xref;
 use Moose;
 use namespace::autoclean;
 
-use MooseX::Aliases;
 use MooseX::Types::URI 'Uri';
 
 =attr url
@@ -56,7 +55,6 @@ the subsite object this cross reference points to
 has 'subsite' => (
     is => 'ro',
     required => 1,
-    alias => 'feature',
    );
 
 =attr renderings
@@ -76,7 +74,6 @@ sub TO_JSON {
     my ( $self ) = @_;
     no strict 'refs';
     return {
-        feature => $self->feature->feature_name,
         map { $_ => $self->$_() }
         qw( url is_empty text renderings )
     };
@@ -86,13 +83,11 @@ sub xref_cmp {
     my ( $a, $b ) = @_;
     no warnings 'uninitialized';
     return
-        $a->feature->feature_name cmp $b->feature->feature_name
+        $a->subsite->name cmp $b->subsite->name
      || $a->is_empty <=> $b->is_empty
      || $a->text cmp $b->text
      || $a->url.'' cmp $b->url.'';
 }
-# alias xref_cmp to cr_cmp for backcompat
-alias 'cr_cmp' => 'xref_cmp';
 
 sub xref_eq {
     my ( $a, $b ) = @_;
@@ -101,10 +96,8 @@ sub xref_eq {
     return !($a->is_empty xor $b->is_empty)
         && $a->text eq $b->text
         && $a->url.'' eq $b->url.''
-        && $a->feature->feature_name eq $b->feature->feature_name;
+        && $a->subsite->name eq $b->subsite->name;
 }
-# alias xref_eq to cr_eq for backcompat
-alias 'cr_eq' => 'xref_eq';
 
 sub uniq {
     my %seen;
@@ -113,7 +106,7 @@ sub uniq {
 sub _uniq_str {
     my ( $self ) = @_;
     return join ',', (
-        $self->feature->feature_name,
+        $self->subsite->name,
         $self->url,
         $self->text,
        );
