@@ -84,6 +84,20 @@ has 'name' => (
 );
 sub _build_name { shift->shortname }
 
+=attr description
+
+short plaintext description of the feature, may be user-visible.  May
+be used in default views for crossreferences and so forth.
+
+=cut
+
+has 'description' => (
+    is      => 'ro',
+    isa     => 'Str',
+    default => '',
+   );
+
+
 =attr internal_url
 
 L<URI> object for the base URL where Ambikon will access this subsite.
@@ -127,6 +141,7 @@ sub TO_JSON {
             internal_url
             name
             shortname
+            description
           )
         ),
         alias => $self->alias,
