@@ -29,16 +29,15 @@ has '_ua' => (
     isa => 'Object',
     lazy_build => 1,
     );
-sub _build_ua { LWP::UserAgent->new }
+sub _build__ua { LWP::UserAgent->new }
 
-# convenience method to do an GET with a path relative to the ambikon
-# base path and with a Content-Type header set requesting a JSON
-# response
-sub _get {
+sub _make_url {
     my ( $self, %args ) = @_;
-    $args{path} = $self->base_url.'/'.$args{path};
-    my $url = URI::FromHash::uri( %args );
-    return $self->_ua->get( $url, 'Content-Type' => 'application/json' );
+    $args{path} = $self->base_url->path.'/'.$args{path};
+    my $url = $self->base_url->clone;
+    $url->path( $args{path} );
+    $url->query_form( $args{query} );
+    return $url;
 }
 
 
@@ -59,15 +58,18 @@ sub search_xrefs {
         ref $_ ? $json->encode( $_ ) : $_
     } @_;
 
-    my $res = $self->_get( path  => 'xrefs/search',
-                           query => { q => \@queries } );
+    my $url = $self->_make_url(
+        path  => 'xrefs/search',
+        query => { q => \@queries },
+       );
+    my $res = $self->_ua->get( $url );
 
     my $data = $res->is_success && eval { $json->decode( $res->content ) };
     if( not $data ) {
         if( $@ ) {
-            die "error fetching Ambikon xrefs, cannot parse server response: $@";
+            die "error fetching Ambikon xrefs from $url: $@\n";
         } else {
-            die "error fetching Ambikon xrefs, server returned ".$res->status_line." with content: ".$res->content;
+            die "error fetching Ambikon xrefs from $url, server returned ".$res->status_line." with content: ".$res->content;
         }
     }
 
