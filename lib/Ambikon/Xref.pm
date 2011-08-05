@@ -48,13 +48,14 @@ has 'is_empty' => (
 
 =attr subsite
 
-the subsite object this cross reference points to
+The subsite object this cross reference points to, if known.  Subsites
+that are creating xrefs do not have to populate this.
 
 =cut
 
 has 'subsite' => (
-    is => 'ro',
-    required => 1,
+    is  => 'ro',
+    isa => 'Object',
    );
 
 =attr renderings
