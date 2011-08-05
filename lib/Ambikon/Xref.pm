@@ -75,8 +75,9 @@ sub TO_JSON {
     my ( $self ) = @_;
     no strict 'refs';
     return {
+        url => ''.$self->url,
         map { $_ => $self->$_() }
-        qw( url is_empty text renderings )
+        qw( is_empty text renderings )
     };
 }
 

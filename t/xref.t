@@ -43,7 +43,7 @@ is( $cr3,   $u[1], 'uniq seems to work 2' );
 
 my $js_hash = $cr3->TO_JSON;
 is( $js_hash->{text}, 'Noggin' );
-can_ok( $js_hash->{url}, 'scheme', 'path' );
+is( $js_hash->{url}, '/foo/baz.txt' );
 ok( !exists $js_hash->{subsite}, 'no subsite' );
 
 
