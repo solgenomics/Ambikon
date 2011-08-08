@@ -45,6 +45,9 @@ sub _make_url {
 
 Request xrefs from the Ambikon server.
 
+Accepts just C<< ( $query ) >> for a single query with no hints, or the long
+form C<< ( queries => \@queries, hints => { foo => 'bar' } ) >>.
+
 Returns a data structure like:
 
   TODO document data structure
@@ -53,14 +56,22 @@ Returns a data structure like:
 
 sub search_xrefs {
     my $self = shift;
+    my %args = @_ == 1 ? ( queries => \@_ ) : @_;
 
     my @queries = map {
         ref $_ ? $json->encode( $_ ) : $_
-    } @_;
+    } @{$args{queries} || [] };
+
+    return {} unless @queries;
+
+    my $hints = $args{hints};
 
     my $url = $self->_make_url(
         path  => 'xrefs/search',
-        query => { q => \@queries },
+        query => {
+            q => \@queries,
+            ( $hints ? ( hints => $json->encode( $hints ) ) : () ),
+        },
        );
     my $res = $self->_ua->get( $url );
 
