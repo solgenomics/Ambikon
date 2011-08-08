@@ -9,6 +9,9 @@ use JSON (); my $json = JSON->new;
 use LWP::UserAgent ();
 use URI::FromHash ();
 
+use Ambikon::Subsite;
+use Ambikon::Xref;
+
 =attr base_url
 
 The base URL at which to access ambikon API functions on the server.
@@ -84,7 +87,16 @@ sub search_xrefs {
         }
     }
 
-    # go through and inflate all the objects
+    # inflate Xref and Subsite objects in the returned data
+    for my $query_results ( values %$data ) {
+        for my $subsite_results ( values %$query_results ) {
+            $subsite_results->{subsite} &&= Ambikon::Subsite->new( $subsite_results->{subsite} );
+
+            for my $xref ( @{ $subsite_results->{xrefs} || [] } ) {
+                $xref = Ambikon::Xref->new( $xref );
+            }
+        }
+    }
 
     return $data;
 }
