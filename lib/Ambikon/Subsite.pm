@@ -17,7 +17,7 @@ around 'BUILDARGS' => sub {
         return $class->$orig({ %$args, config => dclone($args) });
     } else {
         my %args = @_;
-        return $class->$orig({ @_, config => \%args });
+        return $class->$orig({ @_, config => dclone(\%args) });
     }
 };
 
