@@ -29,13 +29,12 @@ elsif( $opt_format eq 'dumper' ) {
 
 exit;
 
-=head1 NAME
-
-  ambikon_xrefs - command-line fetch xrefs from an Ambikon integration server
+# PODNAME: ambikon_xrefs
+# ABSTRACT: command-line fetch xrefs from an Ambikon integration server
 
 =head1 SYNOPSIS
 
-  ambikon_xrefs http://example.com "query 1" "query 2" ...
+  ambikon_xrefs http://example.com/ambikon "query 1" "query 2" ...
 
 =head1 DESCRIPTION
 
