@@ -4,6 +4,8 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use MooseX::Types::URI 'Uri';
 
+use Storable 'dclone';
+
 # tweak buildargs to put a copy of the complete config in our config
 # attr
 around 'BUILDARGS' => sub {
@@ -12,7 +14,7 @@ around 'BUILDARGS' => sub {
 
     if ( @_ == 1 ) {
         my ( $args ) = @_;
-        return $class->$orig({ %$args, config => $args });
+        return $class->$orig({ %$args, config => dclone($args) });
     } else {
         my %args = @_;
         return $class->$orig({ @_, config => \%args });
