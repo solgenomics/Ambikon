@@ -90,10 +90,10 @@ sub search_xrefs {
     # inflate Xref and Subsite objects in the returned data
     for my $query_results ( values %$data ) {
         for my $subsite_results ( values %$query_results ) {
-            $subsite_results->{subsite} &&= Ambikon::Subsite->new( $subsite_results->{subsite} );
+            my $subsite = $subsite_results->{subsite} &&= Ambikon::Subsite->new( $subsite_results->{subsite} );
 
             for my $xref ( @{ $subsite_results->{xrefs} || [] } ) {
-                $xref = Ambikon::Xref->new( $xref );
+                $xref = Ambikon::Xref->new( { %$xref, subsite => $subsite } );
             }
         }
     }
