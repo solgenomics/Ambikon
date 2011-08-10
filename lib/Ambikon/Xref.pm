@@ -1,9 +1,12 @@
 package Ambikon::Xref;
 # ABSTRACT: object representing a single Ambikon xref
 use Moose;
+use Moose::Util::TypeConstraints;
 use namespace::autoclean;
 
 use MooseX::Types::URI 'Uri';
+
+use Ambikon::Types 'TagList';
 
 =attr url
 
@@ -33,6 +36,25 @@ has 'text' => (
     required => 1,
    );
 
+=attr tags
+
+Arrayref of string tags for the xref.  Can be used to provide
+information for categorizing xrefs.
+
+=cut
+
+
+has 'tags' => (
+   is      => 'ro',
+   isa     => TagList,
+   traits  => ['Array'],
+   default => sub { [] },
+   coerce  => 1,
+   handles => {
+       add_tag   => 'push',
+       tag_list  => 'elements',
+   },
+);
 
 =attr is_empty
 
@@ -77,7 +99,7 @@ sub TO_JSON {
     return {
         url => ''.$self->url,
         map { $_ => $self->$_() }
-        qw( is_empty text renderings )
+        qw( is_empty text renderings tags)
     };
 }
 
