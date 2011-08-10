@@ -10,12 +10,12 @@ my $ss = Ambikon::Subsite->new(
     name => 'Foo Special Tool',
     internal_url => 'http://localhost:2121',
     external_path => '/bonk',
-    alias  => 'fogger',
+    tags  => 'fogger',
   );
 
-can_ok $ss, qw/shortname name internal_url external_path alias/;
+can_ok $ss, qw/shortname name internal_url external_path tags/;
 
-is( $ss->alias->[0], 'fogger', 'alias coercion works' );
+is( $ss->tags->[0], 'fogger', 'tags coercion works' );
 is( $ss->description, '', 'has an empty description' );
 is( ref( $ss->TO_JSON ), 'HASH', 'TO_JSON makes a hashref' );
 

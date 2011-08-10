@@ -30,7 +30,7 @@ my $example_xref_data =
       'malformed_result' => 'baz baby',
       'query' => 'cromulence',
       'subsite' => {
-        'alias' => [],
+        'tags' => [],
         'description' => '',
         'external_path' => '/fog',
         'internal_url' => 'http://127.0.0.1:10109/',
@@ -49,7 +49,7 @@ my $example_xref_data =
         }
       ],
       'subsite' => {
-        'alias' => [],
+        'tags' => [],
         'description' => '',
         'external_path' => '/foo',
         'internal_url' => 'http://127.0.0.1:10440/monkeys',
@@ -66,7 +66,7 @@ my $example_xref_data =
       'malformed_result' => 'baz baby',
       'query' => 'monkeys',
       'subsite' => {
-        'alias' => [],
+        'tags' => [],
         'description' => '',
         'external_path' => '/fog',
         'internal_url' => 'http://127.0.0.1:10109/',
@@ -85,7 +85,7 @@ my $example_xref_data =
         }
       ],
       'subsite' => {
-        'alias' => [],
+        'tags' => [],
         'description' => '',
         'external_path' => '/foo',
         'internal_url' => 'http://127.0.0.1:10440/monkeys',

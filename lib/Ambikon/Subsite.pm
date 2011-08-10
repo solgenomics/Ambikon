@@ -47,28 +47,28 @@ has 'shortname' => (
     required => 1,
   );
 
-=attr alias
+=attr tags
 
-Arrayref of string aliases for the subsite.  Often used to categorize
+Arrayref of string tags for the subsite.  Often used to categorize
 subsites by their function.
 
 =cut
 
 {
-  my $at = subtype 'alias_list', as 'ArrayRef[Str]';
+  my $at = subtype 'tag_list', as 'ArrayRef[Str]';
   coerce $at,
     from 'Str',
     via { [ $_ ] };
 
-  has 'alias' => (
+  has 'tags' => (
      is      => 'ro',
      isa     => $at,
      traits  => ['Array'],
      default => sub { [] },
      coerce  => 1,
      handles => {
-         add_alias   => 'push',
-         alias_list  => 'elements',
+         add_tag   => 'push',
+         tag_list  => 'elements',
      },
   );
 }
@@ -146,7 +146,7 @@ sub TO_JSON {
             description
           )
         ),
-        alias => $self->alias,
+        tags => $self->tags,
     };
 }
 
