@@ -6,6 +6,8 @@ use MooseX::Types::URI 'Uri';
 
 use Storable 'dclone';
 
+use Ambikon::Types 'TagList';
+
 # tweak buildargs to put a copy of the complete config in our config
 # attr
 around 'BUILDARGS' => sub {
@@ -54,24 +56,18 @@ subsites by their function.
 
 =cut
 
-{
-  my $at = subtype 'tag_list', as 'ArrayRef[Str]';
-  coerce $at,
-    from 'Str',
-    via { [ $_ ] };
+has 'tags' => (
+   is      => 'ro',
+   isa     => TagList,
+   traits  => ['Array'],
+   default => sub { [] },
+   coerce  => 1,
+   handles => {
+       add_tag   => 'push',
+       tag_list  => 'elements',
+   },
+);
 
-  has 'tags' => (
-     is      => 'ro',
-     isa     => $at,
-     traits  => ['Array'],
-     default => sub { [] },
-     coerce  => 1,
-     handles => {
-         add_tag   => 'push',
-         tag_list  => 'elements',
-     },
-  );
-}
 
 =attr name
 
