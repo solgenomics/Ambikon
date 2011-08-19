@@ -16,7 +16,7 @@ e.g. /unigenes/search.pl?q=SGN-U12
 =cut
 
 has 'url' => (
-    is  => 'ro',
+    is  => 'rw',
     isa => Uri,
     required => 1,
     coerce => 1,
@@ -31,7 +31,7 @@ for example "6 SGN Unigenes"
 =cut
 
 has 'text' => (
-    is  => 'ro',
+    is  => 'rw',
     isa => 'Str',
     required => 1,
    );
@@ -45,7 +45,7 @@ information for categorizing xrefs.
 
 
 has 'tags' => (
-   is      => 'ro',
+   is      => 'rw',
    isa     => TagList,
    traits  => ['Array'],
    default => sub { [] },
@@ -63,7 +63,7 @@ true if the cross reference is empty, may be used as a rendering hint
 =cut
 
 has 'is_empty' => (
-    is  => 'ro',
+    is  => 'rw',
     isa => 'Bool',
     default => 0,
    );
@@ -76,7 +76,7 @@ that are creating xrefs do not have to populate this.
 =cut
 
 has 'subsite' => (
-    is  => 'ro',
+    is  => 'rw',
     isa => 'Object',
    );
 
@@ -88,7 +88,7 @@ then rendering hint
 =cut
 
 has 'renderings' => (
-   is      => 'ro',
+   is      => 'rw',
    isa     => 'HashRef',
    default => sub { +{} },
  );
