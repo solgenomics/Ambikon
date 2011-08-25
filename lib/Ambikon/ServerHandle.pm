@@ -88,9 +88,6 @@ sub search_xrefs {
         }
     }
 
-    use Data::Dump;
-    dd( $data );
-
     # inflate XrefSet, Xref, and Subsite objects in the returned data
     for my $query_results ( values %$data ) {
         for my $subsite_results ( values %$query_results ) {
