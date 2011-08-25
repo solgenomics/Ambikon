@@ -31,7 +31,8 @@ test_constellation(
         my ( $mech, $server ) = @_;
         my $handle = Ambikon::ServerHandle->new( base_url => 'http://localhost:'.$server->port.'/ambikon' );
         my $data = $handle->search_xrefs( queries => ['fogbat'], hints => { noggin => 1 } );
-        is $data->{fogbat}{foo_bar}{xrefs}[0]{text}, 'This is a foo',
+        diag explain $data;
+        is $data->{fogbat}{foo_bar}{xref_set}->xrefs->[0]->text, 'This is a foo',
            'got the right xref data back';
     },
 );
@@ -41,13 +42,16 @@ done_testing;
 
 
 sub xref_response {
-    return [ 200,
-             [],
-             [JSON->new->convert_blessed->encode([
-                 map {
-                     Ambikon::Xref->new( %$_ )
-                 } @_
-              ])
-             ],
-           ];
+    return [
+        200,
+        [],
+        [ JSON->new->convert_blessed->encode(
+            Ambikon::XrefSet->new( [
+                map {
+                    Ambikon::Xref->new( %$_ )
+                } @_
+            ])
+          )
+        ],
+  ];
 }

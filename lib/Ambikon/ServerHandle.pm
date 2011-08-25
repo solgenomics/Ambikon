@@ -11,6 +11,7 @@ use URI::FromHash ();
 
 use Ambikon::Subsite;
 use Ambikon::Xref;
+use Ambikon::XrefSet;
 
 =attr base_url
 
@@ -73,7 +74,7 @@ sub search_xrefs {
         path  => 'xrefs/search',
         query => {
             q => \@queries,
-            ( $hints ? ( hints => $json->encode( $hints ) ) : () ),
+            %{ $hints || {} },
         },
        );
     my $res = $self->_ua->get( $url );
@@ -87,14 +88,20 @@ sub search_xrefs {
         }
     }
 
-    # inflate Xref and Subsite objects in the returned data
+    use Data::Dump;
+    dd( $data );
+
+    # inflate XrefSet, Xref, and Subsite objects in the returned data
     for my $query_results ( values %$data ) {
         for my $subsite_results ( values %$query_results ) {
             my $subsite = $subsite_results->{subsite} &&= Ambikon::Subsite->new( $subsite_results->{subsite} );
 
-            for my $xref ( @{ $subsite_results->{xrefs} || [] } ) {
+            my $xref_set = $subsite_results->{xref_set}
+                or next;
+            for my $xref ( @{$xref_set->{xrefs} || [] } ) {
                 $xref = Ambikon::Xref->new( { %$xref, subsite => $subsite } );
             }
+            $subsite_results->{xref_set} = Ambikon::XrefSet->new( $xref_set );
         }
     }
 
