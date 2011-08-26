@@ -6,7 +6,7 @@ use MooseX::Types::URI 'Uri';
 
 use Storable 'dclone';
 
-use Ambikon::Types 'TagList';
+with 'Ambikon::Role::Taggable';
 
 # tweak buildargs to put a copy of the complete config in our config
 # attr
@@ -48,26 +48,6 @@ has 'shortname' => (
     isa => 'Str',
     required => 1,
   );
-
-=attr tags
-
-Arrayref of string tags for the subsite.  Often used to categorize
-subsites by their function.
-
-=cut
-
-has 'tags' => (
-   is      => 'ro',
-   isa     => TagList,
-   traits  => ['Array'],
-   default => sub { [] },
-   coerce  => 1,
-   handles => {
-       add_tag   => 'push',
-       tag_list  => 'elements',
-   },
-);
-
 
 =attr name
 

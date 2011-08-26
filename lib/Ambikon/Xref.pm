@@ -6,7 +6,7 @@ use namespace::autoclean;
 
 use MooseX::Types::URI 'Uri';
 
-use Ambikon::Types 'TagList';
+with 'Ambikon::Role::Taggable';
 
 =attr url
 
@@ -35,26 +35,6 @@ has 'text' => (
     isa => 'Str',
     required => 1,
    );
-
-=attr tags
-
-Arrayref of string tags for the xref.  Can be used to provide
-information for categorizing xrefs.
-
-=cut
-
-
-has 'tags' => (
-   is      => 'rw',
-   isa     => TagList,
-   traits  => ['Array'],
-   default => sub { [] },
-   coerce  => 1,
-   handles => {
-       add_tag   => 'push',
-       tag_list  => 'elements',
-   },
-);
 
 =attr is_empty
 

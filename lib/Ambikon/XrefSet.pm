@@ -2,6 +2,8 @@ package Ambikon::XrefSet;
 # ABSTRACT: container of Xrefs
 use Moose;
 
+with 'Ambikon::Role::Taggable';
+
 =head1 DESCRIPTION
 
 A container holding Xrefs, which might have renderings or so forth for
