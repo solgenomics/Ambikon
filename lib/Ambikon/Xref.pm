@@ -6,7 +6,8 @@ use namespace::autoclean;
 
 use MooseX::Types::URI 'Uri';
 
-with 'Ambikon::Role::Taggable';
+with 'Ambikon::Role::Taggable',
+     'Ambikon::Role::Renderable';
 
 =attr url
 
@@ -59,19 +60,6 @@ has 'subsite' => (
     is  => 'rw',
     isa => 'Object',
    );
-
-=attr renderings
-
-2-level hashref of suggested renderings, keyed first by content type,
-then rendering hint
-
-=cut
-
-has 'renderings' => (
-   is      => 'rw',
-   isa     => 'HashRef',
-   default => sub { +{} },
- );
 
 sub TO_JSON {
     my ( $self ) = @_;

@@ -2,7 +2,8 @@ package Ambikon::XrefSet;
 # ABSTRACT: container of Xrefs
 use Moose;
 
-with 'Ambikon::Role::Taggable';
+with 'Ambikon::Role::Taggable',
+     'Ambikon::Role::Renderable';
 
 =head1 DESCRIPTION
 
@@ -31,31 +32,6 @@ has 'xrefs' => (
         is_empty => 'is_empty',
     },
   );
-
-=attr renderings
-
-Hashref of renderings, keyed by Content-Type.  For example,
-$set->renderings->{'text/html'} will give the set's HTML rendering, if
-available.
-
-=method rendering
-
-Convenience for accessing a specific rendering.
-C<< $set->rendering('text/html') >> is equivalent to
-C<< $set->rendering->{'text/html'} >>.
-
-=cut
-
-has 'renderings' => (
-    is => 'rw',
-    isa => 'HashRef',
-    default => sub { {} },
-    traits => ['Hash'],
-    handles => {
-        rendering => 'get',
-    },
-);
-
 
 around BUILDARGS => sub {
     my $orig  = shift;
