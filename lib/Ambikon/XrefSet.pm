@@ -12,6 +12,18 @@ this set of Xrefs.
 
 =cut
 
+=attr subsite
+
+The subsite object this cross reference set originated from, if known,
+and if all xrefs are from the same subsite.
+
+=cut
+
+has 'subsite' => (
+    is  => 'rw',
+    isa => 'Object',
+   );
+
 =attr xrefs
 
 Arrayref of L<Ambikon::Xref> objects contained in this set.
