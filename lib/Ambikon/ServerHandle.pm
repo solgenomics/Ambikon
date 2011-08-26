@@ -88,17 +88,42 @@ sub search_xrefs {
         }
     }
 
-    # inflate XrefSet, Xref, and Subsite objects in the returned data
+    return $self->inflate_xref_search_result( $data );
+}
+
+=method inflate_xref_search_result
+
+=cut
+
+# inflate XrefSet, Xref, and Subsite objects in the returned data
+sub inflate_xref_search_result {
+    my ( $self, $data ) = @_;
+
     for my $query_results ( values %$data ) {
         for my $subsite_results ( values %$query_results ) {
-            my $subsite = $subsite_results->{subsite} &&= Ambikon::Subsite->new( $subsite_results->{subsite} );
 
-            my $xref_set = $subsite_results->{xref_set}
-                or next;
-            for my $xref ( @{$xref_set->{xrefs} || [] } ) {
-                $xref = Ambikon::Xref->new( { %$xref, subsite => $subsite } );
+            # inflate subsite if necessary
+            my $subsite = $subsite_results->{subsite};
+            if( $subsite && !blessed $subsite ) {
+                $subsite = $subsite_results->{subsite} = Ambikon::Subsite->new( $subsite_results->{subsite} );
             }
-            $subsite_results->{xref_set} = Ambikon::XrefSet->new( $xref_set );
+
+            # skip this result if no xref set, but don't inflate the
+            # set yet, because need to inflate the Xrefs first
+            my $xref_set = $subsite_results->{xref_set} or next;
+
+            # inflate each of the xrefs in the set
+            my $xrefs = blessed $xref_set ? $xref_set->xrefs : $xref_set->{xrefs} || [];
+            for my $xref ( @$xrefs ) {
+                if( not blessed $xref ) {
+                    $xref = Ambikon::Xref->new( { %$xref, subsite => $subsite } );
+                }
+            }
+
+            # finally, inflate the xref set
+            if( not blessed $subsite_results->{xref_set} ) {
+                $xref_set = $subsite_results->{xref_set} = Ambikon::XrefSet->new( { %$xref_set, subsite => $subsite } );
+            }
         }
     }
 
