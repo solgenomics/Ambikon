@@ -21,6 +21,10 @@ Arrayref of L<Ambikon::Xref> objects contained in this set.
 Convenient method to tell if the set is empty.  Returns whether this
 holds no xrefs.
 
+=method add_xref( $xref, ... )
+
+Add one of more xrefs to this object.
+
 =cut
 
 has 'xrefs' => (
@@ -30,6 +34,7 @@ has 'xrefs' => (
     traits => ['Array'],
     handles => {
         is_empty => 'is_empty',
+        add_xref => 'push',
     },
   );
 
