@@ -7,16 +7,19 @@ use Ambikon::ServerHandle;
 
 GetOptions(
     'f=s' => \( my $opt_format = 'json' ),
+    'h|hints=s' => \( my $hints = '' ),
   ) or pod2usage();
 
 pod2usage() unless @ARGV;
+
+my %hints = map { split /=/, $_ } split /;/, $hints;
 
 die "invalid format $opt_format\n"
   unless { json => 1, dumper => 1 }->{$opt_format};
 
 
 my $serv = Ambikon::ServerHandle->new( base_url => (shift @ARGV) );
-my $data = $serv->search_xrefs( @ARGV );
+my $data = $serv->search_xrefs( queries => \@ARGV, hints => \%hints );
 
 if( $opt_format eq 'json' ) {
     require JSON::PP;
