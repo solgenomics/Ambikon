@@ -16,7 +16,12 @@ use Ambikon::XrefSet;
 =attr base_url
 
 The base URL at which to access ambikon API functions on the server.
-defaults to '/ambikon'
+
+Defaults to the value of the C<HTTP_X_AMBIKON_SERVER_URL> environment
+variable, if set, otherwise defaults to '/ambikon'.
+
+Note that C<HTTP_X_AMBIKON_SERVER_URL> is the value of the incoming
+request's X-Ambikon-Server-Url header, if running under CGI.
 
 =cut
 
@@ -24,7 +29,7 @@ has 'base_url' => (
     is       => 'ro',
     isa      => Uri,
     coerce   => 1,
-    default  => '/ambikon',
+    default  => sub { $ENV{HTTP_X_AMBIKON_SERVER_URL} || '/ambikon' },
    );
 
 # cached useragent obj

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 6;
+use Test::More tests => 8;
 use Test::Exception;
 
 use JSON;
@@ -107,6 +107,15 @@ $mock_ua->get_test( sub {
 my $return = $h->search_xrefs( 'noggin' );
 is ref $return, 'HASH', 'got a hashref back';
 is $return->{cromulence}{baz}{http_status}, 500, 'got right data back';
+
+{
+    is Ambikon::ServerHandle->new( _ua => $mock_ua )->base_url, '/ambikon',
+       'correct default base_url';
+
+    local $ENV{HTTP_X_AMBIKON_SERVER_URL} = 'http://noggin.com/zazz';
+    is Ambikon::ServerHandle->new( _ua => $mock_ua )->base_url, 'http://noggin.com/zazz',
+       'base url set from HTTP_X_AMBIKON_SERVER_URL env var';
+}
 
 
 BEGIN {
