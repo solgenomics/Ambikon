@@ -20,7 +20,7 @@ my $data = $serv->search_xrefs( @ARGV );
 
 if( $opt_format eq 'json' ) {
     require JSON::PP;
-    print JSON::PP->new->pretty->encode( $data );
+    print JSON::PP->new->pretty->convert_blessed->encode( $data );
 }
 elsif( $opt_format eq 'dumper' ) {
     require Data::Dumper;
