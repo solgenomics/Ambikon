@@ -28,13 +28,26 @@ has 'base_url' => (
     default  => sub { $ENV{HTTP_X_AMBIKON_SERVER_URL} || '/ambikon' },
    );
 
-# cached useragent obj
+# per-object cached useragent obj
 has '_ua' => (
     is  => 'ro',
     isa => 'Object',
     lazy_build => 1,
     );
 sub _build__ua { Class::MOP::load_class('LWP::UserAgent');  LWP::UserAgent->new }
+
+# globally cached JSON obj
+{ my $json;
+  has '_json' => (
+      is => 'ro',
+      default => sub {
+          return $json ||= do {
+              Class::MOP::load_class('JSON');
+              JSON->new;
+          }
+      },
+    );
+}
 
 sub _make_url {
     my ( $self, %args ) = @_;
@@ -48,7 +61,7 @@ sub _make_url {
 
 =method search_xrefs
 
-Request xrefs from the Ambikon server.
+Request xrefs JSON from the Ambikon server.
 
 Accepts just C<< ( $query ) >> for a single query with no hints, or the long
 form C<< ( queries => \@queries, hints => { foo => 'bar' } ) >>.
@@ -59,35 +72,15 @@ Returns a data structure like:
 
 =cut
 
-my $json;
 sub search_xrefs {
     my $self = shift;
-    my %args = @_ == 1 ? ( queries => \@_ ) : @_;
 
-    $json ||= do {
-        Class::MOP::load_class('JSON');
-        JSON->new;
-    };
+    my $res = $self->_xrefs_request( 'xrefs/search', @_ )
+        or return  {};
 
-    my @queries = map {
-        ref $_ ? $json->encode( $_ ) : $_
-    } @{$args{queries} || [] };
-
-    return {} unless @queries;
-
-    my $hints = $args{hints};
-
-    my $url = $self->_make_url(
-        path  => 'xrefs/search',
-        query => {
-            q => \@queries,
-            %{ $hints || {} },
-        },
-       );
-    my $res = $self->_ua->get( $url );
-
-    my $data = $res->is_success && eval { $json->decode( $res->content ) };
+    my $data = $res->is_success && eval { $self->_json->decode( $res->content ) };
     if( not $data ) {
+        my $url = $res->request->uri;
         if( $@ ) {
             die "error fetching Ambikon xrefs from $url: $@\n";
         } else {
@@ -142,6 +135,32 @@ sub inflate_xref_search_result {
 
     return $data;
 }
+
+######## helper methods #########3
+
+sub _xrefs_request {
+    my $self = shift;
+    my $path = shift;
+    my %args = @_ == 1 ? ( queries => \@_ ) : @_;
+
+    my @queries = map {
+            ref $_ ? $self->_json->encode( $_ ) : $_
+        } @{$args{queries} || [] };
+
+    return unless @{$args{queries}};
+
+    my $url = $self->_make_url(
+        path  => $path,
+        query => {
+            q => \@queries,
+            %{ $args{hints} || {} },
+        },
+       );
+
+    return $self->_ua->get( $url );
+}
+
+
 
 __PACKAGE__->meta->make_immutable;
 1;

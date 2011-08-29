@@ -12,6 +12,12 @@ my $mock_response = Test::MockObject->new;
 $mock_response->set_always( content     => 'foo' );
 $mock_response->set_always( is_success  => 0     );
 $mock_response->set_always( status_line => 'test status line' );
+$mock_response->set_always( request => do {
+    my $mr = Test::MockObject->new;
+    $mr->set_always( 'uri' => 'http://fakeuri.com' );
+    $mr
+  },
+);
 
 my $mock_ua = FakeUA->new( res => $mock_response );
 
@@ -123,7 +129,7 @@ BEGIN {
     use Moose;
     use Test::MockObject;
 
-    has 'res' => ( is => 'rw', default => sub {Test::MockObject->new } );
+    has 'res' => ( is => 'rw', default => sub { Test::MockObject->new } );
 
     has 'get_test' => ( is => 'rw', default => sub { sub {} } );
 
