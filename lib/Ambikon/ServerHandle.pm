@@ -6,7 +6,6 @@ use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
 use JSON (); my $json = JSON->new;
-use LWP::UserAgent ();
 use URI::FromHash ();
 
 use Ambikon::Subsite;
@@ -38,7 +37,7 @@ has '_ua' => (
     isa => 'Object',
     lazy_build => 1,
     );
-sub _build__ua { LWP::UserAgent->new }
+sub _build__ua { Class::MOP::load_class('LWP::UserAgent');  LWP::UserAgent->new }
 
 sub _make_url {
     my ( $self, %args ) = @_;
