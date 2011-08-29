@@ -5,7 +5,6 @@ use Moose;
 use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
-use JSON (); my $json = JSON->new;
 use URI::FromHash ();
 
 use Ambikon::Subsite;
@@ -62,9 +61,15 @@ Returns a data structure like:
 
 =cut
 
+my $json;
 sub search_xrefs {
     my $self = shift;
     my %args = @_ == 1 ? ( queries => \@_ ) : @_;
+
+    $json ||= do {
+        Class::MOP::load_class('JSON');
+        JSON->new;
+    };
 
     my @queries = map {
         ref $_ ? $json->encode( $_ ) : $_
