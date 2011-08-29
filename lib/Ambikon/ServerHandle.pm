@@ -5,8 +5,6 @@ use Moose;
 use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
-use URI::FromHash ();
-
 use Ambikon::Subsite;
 use Ambikon::Xref;
 use Ambikon::XrefSet;
