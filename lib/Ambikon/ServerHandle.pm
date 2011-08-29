@@ -98,11 +98,17 @@ sub search_xrefs {
     return $self->inflate_xref_search_result( $data );
 }
 
-=method inflate_xref_search_result
+=method inflate_xref_search_result( \%data )
+
+Modifies the given hashref of Ambikon xref result data in-place,
+inflating L<Ambikon::XrefSet>, L<Ambikon::Xref>, and
+L<Ambikon::Subsite> objects from their data-structure representations
+if necessary.
+
+Ignores objects that have already been inflated.
 
 =cut
 
-# inflate XrefSet, Xref, and Subsite objects in the returned data
 sub inflate_xref_search_result {
     my ( $self, $data ) = @_;
 
