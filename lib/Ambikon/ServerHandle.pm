@@ -59,6 +59,33 @@ sub _make_url {
 }
 
 
+=method search_xrefs_html
+
+Request xrefs HTML from the Ambikon server.  The HTML is assembled
+from either renderings provided by subsites, or default Ambikon
+renderings.
+
+Accepts just C<< ( $query ) >> for a single query with no hints, or the long
+form C<< ( queries => \@queries, hints => { foo => 'bar' } ) >>.
+
+=cut
+
+sub search_xrefs_html {
+    my $self = shift;
+
+    my $res = $self->_xrefs_request( 'xrefs/search_html', @_ )
+        or return  {};
+
+    my $content = $res->content;
+    if( not $res->is_success ) {
+        my $url     = $res->request->uri;
+        my $error   = $res->status_line;
+        die "error fetching Ambikon xrefs HTML from $url ($error).  Server returned body:\n$content\n";
+    }
+
+    return $content;
+}
+
 =method search_xrefs
 
 Request xrefs JSON from the Ambikon server.

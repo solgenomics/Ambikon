@@ -22,7 +22,7 @@ test_constellation(
 
     backends => [
         sub {
-            xref_response( { url => '/foo', text => 'This is a foo' } ),
+            xref_response( { url => '/foo', text => 'This is a foo', renderings => { 'text/html' => 'FAKE HTML' } } ),
         }
 
         ],
@@ -31,9 +31,13 @@ test_constellation(
         my ( $mech, $server ) = @_;
         my $handle = Ambikon::ServerHandle->new( base_url => 'http://localhost:'.$server->port.'/ambikon' );
         my $data = $handle->search_xrefs( queries => ['fogbat'], hints => { noggin => 1 } );
-        diag explain $data;
+        #diag explain $data;
         is $data->{fogbat}{foo_bar}{xref_set}->xrefs->[0]->text, 'This is a foo',
            'got the right xref data back';
+
+        my $html = $handle->search_xrefs_html( 'fogbat' );
+        diag $html;
+        like $html, qr!FAKE HTML!, "got xref's HTML rendering";
     },
 );
 
