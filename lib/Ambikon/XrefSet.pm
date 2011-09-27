@@ -3,7 +3,8 @@ package Ambikon::XrefSet;
 use Moose;
 
 with 'Ambikon::Role::Taggable',
-     'Ambikon::Role::Renderable';
+     'Ambikon::Role::Renderable',
+     'Ambikon::Role::Serializable';
 
 =head1 DESCRIPTION
 
@@ -62,10 +63,5 @@ around BUILDARGS => sub {
 
     return $class->$orig( @_ );
 };
-
-sub TO_JSON {
-    my ( $self ) = @_;
-    return { %$self };
-}
 
 1;

@@ -7,7 +7,8 @@ use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
 with 'Ambikon::Role::Taggable',
-     'Ambikon::Role::Renderable';
+     'Ambikon::Role::Renderable',
+     'Ambikon::Role::Serializable';
 
 =attr url
 
