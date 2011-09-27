@@ -62,11 +62,18 @@ sub _make_url {
 =method search_xrefs_html
 
 Request xrefs HTML from the Ambikon server.  The HTML is assembled
-from either renderings provided by subsites, or default Ambikon
+from either renderings provided by subsites, or from default Ambikon
 renderings.
 
-Accepts just C<< ( $query ) >> for a single query with no hints, or the long
-form C<< ( queries => \@queries, hints => { foo => 'bar' } ) >>.
+Can be called as just C<< $s->search_xrefs_html( $query ) >> for a
+single query with no hints, or in a long form for more flexibility:
+
+  $s->search_xrefs_html(
+      queries => \@queries,
+      hints   => {
+          foo => 'bar',
+      },
+  )
 
 =cut
 
@@ -88,14 +95,9 @@ sub search_xrefs_html {
 
 =method search_xrefs
 
-Request xrefs JSON from the Ambikon server.
-
-Accepts just C<< ( $query ) >> for a single query with no hints, or the long
-form C<< ( queries => \@queries, hints => { foo => 'bar' } ) >>.
-
-Returns a data structure like:
-
-  TODO document data structure
+Request xrefs JSON from the Ambikon server.  Accepts the same
+arguments as C<search_xrefs_html> above.  Decodes the JSON response
+and inflates objects (L<Ambikon::XrefSet>, etc).
 
 =cut
 
