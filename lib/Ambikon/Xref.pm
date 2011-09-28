@@ -76,7 +76,7 @@ sub xref_cmp {
     my ( $a, $b ) = @_;
     no warnings 'uninitialized';
     return
-        $a->subsite->name cmp $b->subsite->name
+        ( $a->subsite && $b->subsite && $a->subsite->name cmp $b->subsite->name )
      || $a->is_empty <=> $b->is_empty
      || $a->text cmp $b->text
      || $a->url.'' cmp $b->url.'';
@@ -89,7 +89,7 @@ sub xref_eq {
     return !($a->is_empty xor $b->is_empty)
         && $a->text eq $b->text
         && $a->url.'' eq $b->url.''
-        && $a->subsite->name eq $b->subsite->name;
+        && $a->_subsite_name eq $b->_subsite_name;
 }
 
 sub uniq {
@@ -99,10 +99,17 @@ sub uniq {
 sub _uniq_str {
     my ( $self ) = @_;
     return join ',', (
-        $self->subsite->name,
+        $self->_subsite_name,
         $self->url,
         $self->text,
        );
+}
+
+sub _subsite_name {
+    my $self = shift;
+    my $s = $self->subsite;
+    return '(unknown subsite)' unless $s;
+    return $s->name;
 }
 
 { no warnings 'once';

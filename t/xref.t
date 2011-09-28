@@ -29,13 +29,21 @@ my $cr3 = Ambikon::Xref->new({
     subsite => $mock_subsite,
 });
 
+my $cr4 = Ambikon::Xref->new({
+    url  => '/foo/baz.txt',
+    text => 'Noggin',
+});
+
 ok(   $cr2->xref_eq( $cr1 ), 'cr eq finds equal'     );
 ok( ! $cr2->xref_eq( $cr3 ), 'cr eq finds not equal' );
+ok( ! $cr4->xref_eq( $cr3 ), 'cr eq finds not equal' );
 
 is( $cr2->xref_cmp( $cr1 ),  0, 'cr cmp for eq' );
 is( $cr2->xref_cmp( $cr3 ), -1, 'cr cmp 1' );
 is( $cr3->xref_cmp( $cr1 ),  1, 'cr cmp 2' );
+is( $cr4->xref_cmp( $cr1 ),  1, 'cr cmp 3' );
 
+$cr3->{subsite} = undef;
 my @u = $cr1->uniq( $cr2, $cr3 );
 is( scalar(@u), 2, 'uniq seems to work 0' );
 is( $cr1,   $u[0], 'uniq seems to work 1' );
