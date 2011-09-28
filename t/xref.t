@@ -44,9 +44,7 @@ is( $cr3,   $u[1], 'uniq seems to work 2' );
 my $js_hash = $cr3->TO_JSON;
 is( $js_hash->{text}, 'Noggin' );
 is( $js_hash->{url}, '/foo/baz.txt' );
-is( $js_hash->{__CLASS__}, 'Ambikon::Xref' );
+is( $js_hash->{__CLASS__}->[0], 'Ambikon::Xref' );
 ok( !exists $js_hash->{subsite}, 'no subsite' );
-
-
 
 done_testing;

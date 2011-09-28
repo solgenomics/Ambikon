@@ -6,7 +6,9 @@ use MooseX::Types::URI 'Uri';
 
 use Storable 'dclone';
 
-with 'Ambikon::Role::Taggable';
+with 'Ambikon::Role::Taggable',
+     'Ambikon::Role::Serializable';
+
 
 # tweak buildargs to put a copy of the complete config in our config
 # attr

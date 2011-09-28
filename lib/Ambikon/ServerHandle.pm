@@ -5,6 +5,8 @@ use Moose;
 use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
+use Data::Visitor::Callback;
+
 use Ambikon::Subsite;
 use Ambikon::Xref;
 use Ambikon::XrefSet;
@@ -132,37 +134,55 @@ Ignores objects that have already been inflated.
 =cut
 
 sub inflate_xref_search_result {
-    my ( $self, $data ) = @_;
+    my ( $self, $data, $extra_data ) = @_;
+    $extra_data ||= {};
 
-    for my $query_results ( values %$data ) {
-        for my $subsite_results ( values %$query_results ) {
-
-            # inflate subsite if necessary
-            my $subsite = $subsite_results->{subsite};
-            if( $subsite && !blessed $subsite ) {
-                $subsite = $subsite_results->{subsite} = Ambikon::Subsite->new( $subsite_results->{subsite} );
-            }
-
-            # skip this result if no xref set, but don't inflate the
-            # set yet, because need to inflate the Xrefs first
-            my $xref_set = $subsite_results->{xref_set} or next;
-
-            # inflate each of the xrefs in the set
-            my $xrefs = blessed $xref_set ? $xref_set->xrefs : $xref_set->{xrefs} || [];
-            for my $xref ( @$xrefs ) {
-                if( not blessed $xref ) {
-                    $xref = Ambikon::Xref->new( { %$xref, subsite => $subsite } );
+    Data::Visitor::Callback
+        ->new(
+            ignore_return_values => 1,
+            array => sub {
+                my ( $v, $ar ) = @_;
+                for ( @$ar ) {
+                    $v->visit( $_ );
+                    if ( my $i = $self->_inflate( $extra_data, $_ ) ) {
+                        $_ = $i;
+                    }
                 }
-            }
-
-            # finally, inflate the xref set
-            if( not blessed $subsite_results->{xref_set} ) {
-                $xref_set = $subsite_results->{xref_set} = Ambikon::XrefSet->new( { %$xref_set, subsite => $subsite } );
-            }
-        }
-    }
+            },
+            hash  => sub {
+                my ( $v, $hr ) = @_;
+                for my $k ( keys %$hr) {
+                    $v->visit( $hr->{$k} );
+                    if ( my $i = $self->_inflate( $extra_data, $hr->{$k} ) ) {
+                        $hr->{$k} = $i;
+                    }
+                }
+            },
+          )
+        ->visit( $data );
 
     return $data;
+}
+
+sub _inflate {
+    my ( $self, $extra, $obj ) = @_;
+
+    ref $obj eq 'HASH' and ( my $classes = $obj->{__CLASS__} )
+        or return;
+
+    $classes = [$classes] unless ref $classes;
+
+    my $error;
+    for my $class ( @$classes ) {
+        # load the most specific class that we can
+        eval { Class::MOP::load_class( $class ) };
+        if( $@ ) { $error = $@; next }
+        my $obj = eval { $class->thaw( { %$extra, %$obj } ) };
+        if( $@ ) { $error = $@; next }
+        return $obj;
+    }
+
+    die "could not inflate object: $error";
 }
 
 ######## helper methods #########3
