@@ -12,6 +12,7 @@ GetOptions(
 
 pod2usage() unless @ARGV;
 
+$opt_format = lc $opt_format;
 die "invalid format $opt_format\n"
   unless { json => 1, dumper => 1 }->{$opt_format};
 
