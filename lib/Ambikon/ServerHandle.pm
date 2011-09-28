@@ -6,6 +6,7 @@ use namespace::autoclean;
 use MooseX::Types::URI 'Uri';
 
 use Data::Visitor::Callback;
+use List::MoreUtils 'uniq';
 
 use Ambikon::Subsite;
 use Ambikon::Xref;
@@ -136,7 +137,8 @@ Ignores objects that have already been inflated.
 
 sub inflate_xref_search_result {
     my ( $self, $data, $extra_data ) = @_;
-    $extra_data ||= {};
+    # shallow-clone extra_data so we can modify it
+    $extra_data = { %{ $extra_data || {} } };
 
     Data::Visitor::Callback
         ->new(
@@ -152,10 +154,19 @@ sub inflate_xref_search_result {
             },
             hash  => sub {
                 my ( $v, $hr ) = @_;
-                for my $k ( keys %$hr) {
+                # NOTE: code below is complicated a bit by the need to
+                # make sure we inflate the subsite first, if present,
+                # so we can pass it to any other inflated objects as
+                # an attribute
+                for my $k ( uniq 'subsite', keys %$hr) {
+                    next unless $hr->{$k};
+
                     $v->visit( $hr->{$k} );
                     if ( my $i = $self->_inflate( $extra_data, $hr->{$k} ) ) {
                         $hr->{$k} = $i;
+                    }
+                    if( $k eq 'subsite' ) {
+                        $extra_data->{subsite} = $hr->{$k};
                     }
                 }
             },
