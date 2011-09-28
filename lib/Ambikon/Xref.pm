@@ -109,7 +109,7 @@ sub _uniq_str {
   *distinct = \&uniq;
 }
 
-
+__PACKAGE__->meta->make_immutable;
 1;
 
 

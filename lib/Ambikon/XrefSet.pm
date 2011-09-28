@@ -64,4 +64,5 @@ around BUILDARGS => sub {
     return $class->$orig( @_ );
 };
 
+__PACKAGE__->meta->make_immutable;
 1;
