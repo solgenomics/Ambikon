@@ -99,7 +99,8 @@ sub search_xrefs_html {
 
 Request xrefs JSON from the Ambikon server.  Accepts the same
 arguments as C<search_xrefs_html> above.  Decodes the JSON response
-and inflates objects (L<Ambikon::XrefSet>, etc).
+and inflates objects (L<Ambikon::XrefSet>, etc).  Returns nothing if
+no response.
 
 =cut
 
@@ -107,7 +108,7 @@ sub search_xrefs {
     my $self = shift;
 
     my $res = $self->_xrefs_request( 'xrefs/search', @_ )
-        or return  {};
+        or return;
 
     my $data = $res->is_success && eval { $self->_json->decode( $res->content ) };
     if( not $data ) {
@@ -196,7 +197,7 @@ sub _xrefs_request {
             ref $_ ? $self->_json->encode( $_ ) : $_
         } @{$args{queries} || [] };
 
-    return unless @{$args{queries}};
+    return unless $args{queries} && @{$args{queries}};
 
     my $url = $self->_make_url(
         path  => $path,
