@@ -121,10 +121,10 @@ sub search_xrefs {
         }
     }
 
-    return $self->inflate_xref_search_result( $data );
+    return $data;
 }
 
-=method inflate_xref_search_result( \%data )
+=method inflate( \%data )
 
 Modifies the given hashref of Ambikon xref result data in-place,
 inflating L<Ambikon::XrefSet>, L<Ambikon::Xref>, and
@@ -135,7 +135,9 @@ Ignores objects that have already been inflated.
 
 =cut
 
-sub inflate_xref_search_result {
+*inflate_xref_search_result = \&inflate;
+
+sub inflate {
     my ( $self, $data, $extra_data ) = @_;
     # shallow-clone extra_data so we can modify it
     $extra_data = { %{ $extra_data || {} } };

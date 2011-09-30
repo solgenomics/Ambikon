@@ -31,12 +31,14 @@ test_constellation(
         my ( $mech, $server ) = @_;
         my $handle = Ambikon::ServerHandle->new( base_url => 'http://localhost:'.$server->port.'/ambikon' );
         my $data = $handle->search_xrefs( queries => ['fogbat'], hints => { noggin => 1 } );
+        $handle->inflate( $data );
         #diag explain $data;
         is $data->{fogbat}{foo_bar}{xref_set}->xrefs->[0]->text, 'This is a foo',
            'got the right xref data back';
 
         # test a flat_array data format
         $data = $handle->search_xrefs( queries => ['fogbat'], hints => { format => 'flat_array' } );
+        $handle->inflate( $data );
         is ref $data, 'ARRAY', 'flat_array returns an arrayref';
         is $data->[0]->tags->[0], 'foo_bar';
         #diag explain $data;
