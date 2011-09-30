@@ -197,7 +197,7 @@ sub _inflate {
     die "could not inflate object: $error";
 }
 
-######## helper methods #########3
+######## helper methods #########
 
 sub _xrefs_request {
     my $self = shift;
