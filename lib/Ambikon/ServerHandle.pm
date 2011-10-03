@@ -84,7 +84,7 @@ sub search_xrefs_html {
     my $self = shift;
 
     my $res = $self->_xrefs_request( 'xrefs/search_html', @_ )
-        or return  {};
+        or return;
 
     my $content = $res->content;
     if( not $res->is_success ) {
