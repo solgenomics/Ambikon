@@ -14,7 +14,7 @@ pod2usage() unless @ARGV;
 
 $opt_format = lc $opt_format;
 die "invalid format $opt_format\n"
-  unless { json => 1, dumper => 1 }->{$opt_format};
+  unless { json => 1, dumper => 1, dump => 1 }->{$opt_format};
 
 
 my $serv = Ambikon::ServerHandle->new( base_url => (shift @ARGV) );
@@ -27,6 +27,10 @@ if( $opt_format eq 'json' ) {
 elsif( $opt_format eq 'dumper' ) {
     require Data::Dumper;
     print Data::Dumper::Dumper( $data );
+} elsif( $opt_format eq 'dump' ) {
+    require # hide from dzil
+        Data::Dump;
+    print Data::Dump::dump( $data );
 }
 
 exit;
