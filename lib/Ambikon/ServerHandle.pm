@@ -191,12 +191,13 @@ sub _inflate {
         # load the most specific class that we can
         eval { Class::MOP::load_class( $class ) };
         if( $@ ) { $error = $@; next }
-        my $obj = eval { $class->thaw( { %$extra, %$obj } ) };
+        my $thawed = eval { $class->thaw( { %$extra, %$obj } ) };
         if( $@ ) { $error = $@; next }
-        return $obj;
+        return $thawed;
     }
 
-    die "could not inflate object: $error";
+    warn "warning, could not inflate object: $error";
+    return $obj;
 }
 
 ######## helper methods #########
