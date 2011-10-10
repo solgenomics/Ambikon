@@ -1,0 +1,124 @@
+{
+   "Solyc08g008170" : {
+      "SGN" : {
+         "subsite" : {
+            "__CLASS__" : [
+               "Ambikon::IntegrationServer::Subsite",
+               "Ambikon::Subsite"
+            ],
+            "shortname" : "sgn",
+            "external_path" : "/",
+            "internal_url" : "http://localhost:3000",
+            "modification" : {},
+            "name" : "SGN",
+            "description" : "",
+            "tags" : []
+         },
+         "http_status" : "200",
+         "headers" : {
+            "URL" : "http://localhost:3000/ambikon/xrefs/search?q=Solyc08g008170&render_type=rich&renderings=text%2Fhtml",
+            "connection" : "keep-alive",
+            "x-catalyst" : "5.90002",
+            "date" : "Sat, 08 Oct 2011 02:28:59 GMT",
+            "HTTPVersion" : "1.1",
+            "Status" : "200",
+            "vary" : "Content-Type",
+            "content-length" : "4663",
+            "Reason" : "OK",
+            "content-type" : "application/json"
+         },
+         "query" : {
+            "q" : "Solyc08g008170",
+            "render_type" : "rich",
+            "renderings" : "text/html"
+         },
+         "xref_set" : {
+            "__CLASS__" : [
+               "Ambikon::XrefSet"
+            ],
+            "renderings" : {
+               "text/html" : "\n    <dl class=\"xref\">\n        <dt>Genetic loci</dt>\n        <dd>\n              <ul class=\"xref xref_link\">\n        <li><a class=\"xref xref_link\" href=\"/phenome/locus_display.pl?locus_id=30978\">Tomato locus Solyc08g008170</a>\n\n    </ul>\n\n        </dd>\n        <dt>Genome browser</dt>\n        <dd>\n            \n\n\n\n<table class=\"columnar_table_noborder\" summary=\"\" cellspacing=\"0\" width=\"100%\">\n<thead><tr><th align=\"left\" class=\"columnar_table_noborder\" colspan=\"1\">Annotation Set</th><th  class=\"columnar_table_noborder\" colspan=\"1\">Feature(s)</th><th  class=\"columnar_table_noborder\" colspan=\"1\">Region</th></tr></thead>\n<tbody>\n<tr><td class=\"columnar_table bgcoloralt1\"  align=\"left\">ITAG2.3 Release: genomic annotations</td><td class=\"columnar_table bgcoloralt1\"  >Solyc08g008170.2</td><td class=\"columnar_table bgcoloralt1\"  ><a href=\"/gbrowse/bin/gbrowse/ITAG2.3_genomic/?name=SL2.40ch08%3A2637882..2642478&h_feat=Solyc08g008170.2\">SL2.40ch08:2637882..2642478</a></td></tr>\n</tbody></table>\n\n\n\n\n\n        </dd>\n        <dt>Genomic details</dt>\n        <dd>\n              <ul class=\"xref xref_link\">\n        <li><a class=\"xref xref_link\" href=\"/feature/view/id/17384950\">Solyc08g008170 gene feature details</a>\n\n    </ul>\n\n        </dd>\n    </dl>\n\n\n"
+            },
+            "tags" : [],
+            "xrefs" : [
+               {
+                  "__CLASS__" : [
+                     "SGN::SiteFeatures::CrossReference",
+                     "Ambikon::Xref"
+                  ],
+                  "text" : "Solyc08g008170 gene feature details",
+                  "is_empty" : 0,
+                  "url" : "/feature/view/id/17384950",
+                  "renderings" : {
+                     "text/html" : "<a class=\"xref xref_link\" href=\"/feature/view/id/17384950\">Solyc08g008170 gene feature details</a>\n"
+                  },
+                  "tags" : [
+                     "Genomic details"
+                  ]
+               },
+               {
+                  "__CLASS__" : [
+                     "SGN::SiteFeatures::CrossReference",
+                     "Ambikon::Xref"
+                  ],
+                  "text" : "Tomato locus Solyc08g008170",
+                  "is_empty" : 0,
+                  "url" : "/phenome/locus_display.pl?locus_id=30978",
+                  "renderings" : {
+                     "text/html" : "<a class=\"xref xref_link\" href=\"/phenome/locus_display.pl?locus_id=30978\">Tomato locus Solyc08g008170</a>\n"
+                  },
+                  "tags" : [
+                     "Genetic loci"
+                  ]
+               },
+               {
+                  "seq_id" : "SL2.40ch08",
+                  "renderings" : {
+                     "text/html" : "\n    <div class=\"xref xref_rich xref_rich_gbrowse2\">\n\n        <a href=\"/gbrowse/bin/gbrowse/ITAG2.3_genomic/?name=SL2.40ch08%3A2637882..2642478&h_feat=Solyc08g008170.2\">\n           <img src=\"/gbrowse/bin/gbrowse_img/ITAG2.3_genomic/?width=600&grid=1&format=GD&name=SL2.40ch08%3A2637882..2642478&keystyle=between\" />\n        </a>\n\n        <hr />\n\n        <table summary=\"\" class=\"info_table_noborder\" >\n<tr>  <td class=\"info_table_field\">\n    <span class=\"info_table_fieldname\">Annotation Set</span>\n    <div class=\"info_table_fieldval\">\n      ITAG2.3 Release: genomic annotations\n    </div>\n  </td>\n  <td class=\"info_table_field\">\n    <span class=\"info_table_fieldname\">Sequence Region</span>\n    <div class=\"info_table_fieldval\">\n      <a href=\"/gbrowse/bin/gbrowse/ITAG2.3_genomic/?name=SL2.40ch08%3A2637882..2642478&h_feat=Solyc08g008170.2\">SL2.40ch08:2637882..2642478</a>\n    </div>\n  </td>\n</tr>\n</table>\n\n        <table summary=\"\" class=\"info_table_noborder\" >\n<tr>  <td class=\"info_table_field\">\n    <span class=\"info_table_fieldname\">Feature(s) matched</span>\n    <div class=\"info_table_fieldval\">\n      Solyc08g008170.2\n    </div>\n  </td>\n</tr>\n</table>\n\n     </div>\n\n\n"
+                  },
+                  "end" : "2642478",
+                  "tags" : [
+                     "Genome browser"
+                  ],
+                  "__CLASS__" : [
+                     "SGN::Feature::GBrowse2::DataSource::CrossReference",
+                     "SGN::SiteFeatures::CrossReference",
+                     "Ambikon::Xref"
+                  ],
+                  "preview_image_url" : "/gbrowse/bin/gbrowse_img/ITAG2.3_genomic/?width=600&grid=1&format=GD&name=SL2.40ch08%3A2637882..2642478&keystyle=between",
+                  "data_source" : {
+                     "extended_description" : "ITAG Release 2.3 (2011-04-26) official annotations on the SL2.40 genome build by the International Tomato Annotation Group (ITAG).",
+                     "name" : "ITAG2.3_genomic",
+                     "view_url" : "/gbrowse/bin/gbrowse/ITAG2.3_genomic/",
+                     "path" : "/tmp/rob/SGN-site/features/gbrowse2/rendered_conf/ITAG2.3_genomic.conf",
+                     "description" : "ITAG2.3 Release: genomic annotations",
+                     "__CLASS__" : [
+                        "SGN::Feature::GBrowse2::DataSource",
+                        "SGN::Feature::GBrowse::DataSource"
+                     ],
+                     "image_url" : "/gbrowse/bin/gbrowse_img/ITAG2.3_genomic/?width=600&grid=1&keystyle=between",
+                     "organism" : "Solanum lycopersicum"
+                  },
+                  "is_empty" : 0,
+                  "text" : "ITAG2.3 Release: genomic annotations -  view SL2.40ch08:2637882..2642478  (Solyc08g008170.2)",
+                  "is_whole_sequence" : "",
+                  "url" : "/gbrowse/bin/gbrowse/ITAG2.3_genomic/?name=SL2.40ch08%3A2637882..2642478&h_feat=Solyc08g008170.2",
+                  "start" : "2637882",
+                  "seqfeatures" : [
+                     {
+                        "primary_id" : 710710,
+                        "seq_id" : "SL2.40ch08",
+                        "display_name" : "Solyc08g008170.2",
+                        "end" : "2642478",
+                        "start" : "2637882"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   },
+   "renderings" : {
+      "text/fake_content_type" : "fake stuff!"
+   }
+}
