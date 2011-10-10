@@ -27,20 +27,7 @@ sub xref_response_html {
         ( map {
             my $query = $_;
             my $v = $response->{$_};
-            ( qq|   <dt class="ambikon_xref ambikon">$query</dt>|,
-              qq|       <dd>|,
-              ( map {
-                  my $subsite_name = $_;
-                  $v = $v->{$subsite_name};
-                  if( my $xrefs = $v->{xref_set} ) {
-                      $self->xref_set_html( $xrefs );
-                  } else {
-                      ()
-                  }
-                } sort keys %$v
-              ),
-              qq|       </dd>|,
-            )
+            $self->_response_query_html( $_, $response->{$_} );
           } sort grep !$self->_reserved_key( $_ ), keys %$response,
         ),
         qq|</dl>|,
@@ -48,6 +35,28 @@ sub xref_response_html {
 
     return $whole_body;
 }
+
+sub _response_query_html {
+  my ( $self, $query, $v ) = @_;
+
+  my @results = map {
+      my $subsite_name = $_;
+      $v = $v->{$subsite_name};
+      if( my $xrefs = $v->{xref_set} ) {
+          $self->xref_set_html( $xrefs );
+      } else {
+          ()
+      }
+  } sort keys %$v;
+
+  return unless @results;
+  return ( qq|   <dt class="ambikon_xref ambikon">$query</dt>|,
+           qq|       <dd>|,
+           @results,
+           qq|       </dd>|,
+         );
+}
+
 
 sub _reserved_key {
     return {
@@ -63,9 +72,14 @@ sub xref_set_html {
     my $pre_rendered = $self->_get( $set, 'renderings' )->{'text/html'};
     return $pre_rendered if $pre_rendered;
 
+    my @xrefs = uniq( map "<li>".$self->xref_html( $_ )."</li>", @{ $self->_get($set, 'xrefs' ) } );
+    return unless @xrefs;
+
     return join '', map "$_\n", (
                '<div class="ambikon_xref_set ambikon">',
-               uniq( map $self->xref_html( $_ ), @{ $self->_get($set, 'xrefs' ) } ),
+               '<ul>',
+               @xrefs,
+               '</ul>',
                '</div>',
              );
 
