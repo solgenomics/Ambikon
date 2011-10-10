@@ -8,8 +8,8 @@ my $json = JSON->new;
 
 use Ambikon::XrefSet;
 use Ambikon::Xref;
-use Ambikon::Xref::Inflator;
-my $inflator = Ambikon::Xref::Inflator->new;
+use Ambikon::Serializer;
+my $inflator = Ambikon::Serializer->new;
 
 use_ok('Ambikon::View::Xrefs::HTML');
 my $v = Ambikon::View::Xrefs::HTML->new;

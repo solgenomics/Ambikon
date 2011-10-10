@@ -1,4 +1,5 @@
-package Ambikon::Xref::Inflator;
+package Ambikon::Serializer;
+#ABSTRACT: handler for serializing and deserializing Ambikon objects to and from JSON or other formats
 use Moose;
 
 use List::MoreUtils 'uniq';
@@ -81,3 +82,4 @@ sub _inflate {
 
 __PACKAGE__->meta->make_immutable;
 1;
+

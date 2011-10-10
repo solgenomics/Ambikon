@@ -8,7 +8,7 @@ use MooseX::Types::URI 'Uri';
 use Ambikon::Subsite;
 use Ambikon::Xref;
 use Ambikon::XrefSet;
-use Ambikon::Xref::Inflator;
+use Ambikon::Serializer;;
 
 =attr base_url
 
@@ -122,9 +122,9 @@ sub search_xrefs {
     return $data;
 }
 
-has 'xref_inflator' => (
+has 'serializer' => (
     is => 'ro',
-    default => sub { Ambikon::Xref::Inflator->new },
+    default => sub { Ambikon::Serializer->new },
     handles => [ 'inflate' ],
 );
 
