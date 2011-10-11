@@ -125,7 +125,7 @@ sub search_xrefs {
 has 'serializer' => (
     is => 'ro',
     default => sub { Ambikon::Serializer->new },
-    handles => [ 'inflate' ],
+    handles => [ 'inflate', 'encode_queries', 'decode_queries' ],
 );
 
 ######## helper methods #########
@@ -135,24 +135,20 @@ sub _xrefs_request {
     my $path = shift;
     my %args = @_ == 1 ? ( queries => \@_ ) : @_;
 
-    my @queries = map {
-            ref $_ ? $self->_json->encode( $_ ) : $_
-        } @{$args{queries} || [] };
+    my $queries = $self->encode_queries( $args{queries} || [] );
 
     return unless $args{queries} && @{$args{queries}};
 
     my $url = $self->_make_url(
         path  => $path,
         query => {
-            q => \@queries,
+            q => $self->encode_queries( $queries ),
             %{ $args{hints} || {} },
         },
        );
 
     return $self->_ua->get( $url );
 }
-
-
 
 __PACKAGE__->meta->make_immutable;
 1;

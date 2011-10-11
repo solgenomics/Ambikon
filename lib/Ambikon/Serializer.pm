@@ -1,8 +1,10 @@
 package Ambikon::Serializer;
-#ABSTRACT: handler for serializing and deserializing Ambikon objects to and from JSON or other formats
+#ABSTRACT: handler for serializing and deserializing Ambikon objects to and from data structures
 use Moose;
 
 use List::MoreUtils 'uniq';
+
+use JSON; my $json = JSON->new->convert_blessed;
 
 use Data::Visitor::Callback;
 
@@ -78,6 +80,59 @@ sub _inflate {
 
     warn "warning, could not inflate object: $error";
     return $obj;
+}
+
+=method decode_queries( \@queries )
+
+Given an arrayref of strings, returns another arrayref containing
+decoded versions of any strings it recognizes.  For example, if
+passed:
+
+  [ 'hello', 'application/json:{ "foo" : "bar" }', 'hi' ]
+
+It will return:
+
+  [ 'hello', { foo => 'bar' }, 'hi' ]
+
+Returns an arrayref of strings and data structures.
+
+=cut
+
+sub decode_queries {
+    my ( $self, $queries ) = @_;
+
+    return [
+        map {
+            my $q = $_;
+            if( s!^application/json:!!
+                and my $decode = eval { $json->decode( $_ ) }
+              ) {
+                $decode
+            } else {
+                $q
+            }
+        } @$queries
+    ];
+}
+
+=method encode_queries( \@queries, $preferred_content_type = 'application/json' )
+
+The reverse of decode_queries above.
+
+=cut
+
+sub encode_queries {
+    my ( $self, $queries, $content_type ) = @_;
+    $content_type ||= 'application/json';
+
+    my $encoder = {
+        'application/json' => sub { $json->encode( @_ ) },
+    }->{$content_type} or die "content type $content_type not supported";
+
+    return [
+        map { ref $_ ? $content_type.':'.$encoder->( $_ ) : $_ }
+        @$queries
+    ];
 }
 
 __PACKAGE__->meta->make_immutable;
