@@ -27,23 +27,24 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.6339286"
-     inkscape:cx="78.20951"
-     inkscape:cy="81.727433"
+     inkscape:zoom="1.3169643"
+     inkscape:cx="-132.38693"
+     inkscape:cy="-52.921922"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1228"
-     inkscape:window-height="820"
-     inkscape:window-x="158"
-     inkscape:window-y="87"
+     inkscape:window-width="835"
+     inkscape:window-height="750"
+     inkscape:window-x="45"
+     inkscape:window-y="178"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
      showborder="false"
-     inkscape:showpageshadow="false" />
+     inkscape:showpageshadow="false"
+     inkscape:object-nodes="true" />
   <metadata
      id="metadata4969">
     <rdf:RDF>
@@ -64,7 +65,7 @@
     <rect
        inkscape:export-ydpi="600.25751"
        inkscape:export-xdpi="600.25751"
-       inkscape:export-filename="/home/rob/cxgn/ambikon/doc/art/ambikon_logo.png"
+       inkscape:export-filename="/home/rob/cxgn/Ambikon/doc/art/ambikon_logo.png"
        ry="28.571428"
        rx="28.571428"
        y="463.62787"
@@ -75,25 +76,16 @@
        style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ff6600;stroke-width:5.80000019;stroke-miterlimit:4;stroke-opacity:0.98823529;stroke-dasharray:none;font-family:Saab;-inkscape-font-specification:Saab" />
     <path
        style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
-       d="m 336.52463,526.75602 -5.3045,33.40705 c 0.18609,0.005 0.37711,0 0.56431,0 l 6.88456,0 4.68376,-25.81711 16.53423,0 0.0564,25.81711 8.01317,0 0,-25.81711 16.59066,0 3.83729,21.50015 c 2.5754,-1.84796 4.75037,-4.23223 6.37669,-6.96921 l -3.49871,-22.12088 z"
+       d="m 337.59848,527.5614 -5.3045,33.40705 c 0.18609,0.005 0.37711,0 0.56431,0 l 6.88456,0 4.68376,-25.81711 16.53423,0 0.0564,25.81711 8.01317,0 0,-25.81711 16.59066,0 3.83729,21.50015 c 2.5754,-1.84796 4.75037,-4.23223 6.37669,-6.96921 l -3.49871,-22.12088 z"
        id="path4996"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccsccccccccccc" />
+       sodipodi:nodetypes="ccsccccccccccc"
+       inkscape:export-filename="/home/rob/cxgn/Ambikon/doc/art/ambikon_logo.png"
+       inkscape:export-xdpi="600.25751"
+       inkscape:export-ydpi="600.25751" />
     <g
        id="g4054"
-       transform="matrix(1.0133323,0.06172051,-0.06172051,1.0133323,22.180325,-18.319439)">
-      <path
-         inkscape:connector-curvature="0"
-         d="m 343.03925,465.7352 c 7.88062,-3.59761 15.20449,-5.39645 21.97164,-5.39655 2.31273,1e-4 4.53987,0.19282 6.68144,0.5782 8.60868,1.67045 14.51917,6.0605 17.73149,13.17014 1.49894,3.34079 2.24847,6.74574 2.24856,10.21488 -9e-5,2.44136 -0.36414,4.92548 -1.09216,7.45237 -1.84176,6.03904 -5.46087,10.30059 -10.85733,12.78466 -3.2123,1.49909 -6.31746,2.2486 -9.31545,2.24855 -2.0559,5e-5 -4.77558,-0.59956 -8.15907,-1.79884 -3.34078,-1.19917 -6.76714,-5.63204 -10.27912,-13.29862 -1.41343,-3.08367 -2.74116,-5.4393 -3.98316,-7.0669 -1.19928,-1.62745 -2.63408,-2.44122 -4.30438,-2.44129 -2.01304,7e-5 -4.6899,0.72818 -8.03058,2.18432 -6.98127,2.86965 -14.73344,10.49333 -23.25653,22.87105 l -7.70934,-4.36862 c 9.80798,-17.51728 22.59264,-29.89505 38.35399,-37.13335"
-         id="path5000"
-         style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5560"
-         d="m 364.91366,462.78143 c -0.74812,0.0214 -1.46864,0.0736 -2.21365,0.15535 -22.28993,2.2658 -40.95595,17.3244 -52.62261,35.80668 l -2.36899,3.41755 3.84475,2.64084 3.14571,-4.46612 3.49523,-4.81565 0.0777,-0.0388 c 6.86586,-7.93008 16.85232,-17.20101 28.19485,-15.22366 9.4017,5.50511 8.39547,22.2633 20.8937,23.65105 12.86028,2.97279 24.48211,-10.50418 21.55391,-23.06851 -1.50456,-11.93932 -12.77873,-18.37852 -24.00057,-18.05869 z"
-         style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
-         sodipodi:nodetypes="ccccccccccccc" />
-    </g>
+       transform="matrix(1.0133323,0.06172051,-0.06172051,1.0133323,22.180325,-18.319439)" />
     <path
        style="font-size:200.31359863px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
        d="m 81.495886,496.68719 c 1.23893,-1.82576 2.34743,-3.39071 3.32551,-4.69485 0.97811,-1.36931 2.0214,-2.54302 3.1299,-3.52114 1.04331,-0.97807 2.24962,-1.79314 3.61895,-2.44523 1.36933,-0.65204 3.06469,-1.17369 5.08609,-1.56495 0.13041,3.9124 0.97809,6.87928 2.54304,8.90065 1.630154,1.95621 4.662244,2.9343 9.096274,2.93428 3.39071,2e-5 6.09677,-0.91287 8.11818,-2.73866 2.02137,-1.82575 3.03207,-4.30359 3.03209,-7.43351 -2e-5,-2.21699 -0.35866,-4.04276 -1.0759,-5.47733 -0.71729,-1.4345 -1.63018,-2.60821 -2.73866,-3.52114 -1.04332,-0.97805 -2.21704,-1.69532 -3.52114,-2.1518 -1.30414,-0.45641 -2.57566,-0.78244 -3.81457,-0.9781 -1.17372,-0.19557 -2.21702,-0.29338 -3.1299,-0.29342 -0.91289,4e-5 -1.53235,4e-5 -1.85837,0 -2.54305,4e-5 -5.086104,0.45648 -7.629144,1.36933 -2.54304,0.91292 -4.98827,2.18444 -7.3357,3.81456 -2.41262,1.56499 -4.72744,3.48857 -6.94446,5.77076 -2.217,2.21704 -4.271,4.66227 -6.16199,7.3357 l 6.2598,4.69485 0,0"
@@ -166,6 +158,23 @@
          inkscape:connector-curvature="0" />
     </g>
     <path
+       style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
+       d="m 359.16759,474.45029 c -6.46142,0.0272 -13.48323,1.501 -21.03125,4.40625 -15.71211,6.08838 -29.05445,16.88996 -40.0625,32.375 l 0,6.75 4.75,3.0625 c 9.88008,-12.62951 18.62874,-20.24041 26.25,-22.84375 3.65231,-1.3341 6.54359,-1.91176 8.6875,-1.78125 1.77888,0.10842 3.26583,1.06396 4.4375,2.875 1.21716,1.81398 2.47596,4.40543 3.78125,7.78125 3.24297,8.39279 6.58232,13.31866 10.0625,14.8125 3.52565,1.49672 6.4042,2.33544 8.59375,2.46875 3.19288,0.19453 6.54413,-0.42433 10.0625,-1.8125 5.90841,-2.2955 10.05301,-6.59409 12.40625,-12.90625 0.93926,-2.64394 1.46653,-5.27493 1.625,-7.875 0.22494,-3.69467 -0.33908,-7.34479 -1.71875,-11 -2.95996,-7.7802 -8.97129,-12.85003 -18.03125,-15.1875 -2.2558,-0.54935 -4.63068,-0.91237 -7.09375,-1.0625 -0.90088,-0.0549 -1.79569,-0.0664 -2.71875,-0.0625 z"
+       id="path5000"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/rob/cxgn/Ambikon/doc/art/ambikon_logo.png"
+       inkscape:export-xdpi="600.25751"
+       inkscape:export-ydpi="600.25751" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5560"
+       d="m 361.63386,477.11966 c -0.79814,-0.0257 -1.56889,-0.0169 -2.36763,0.0218 -23.88596,0.96719 -44.74226,15.79391 -58.36626,34.72091 l -2.74469,3.48605 3.92339,3.06192 3.63992,-4.55241 4.03483,-4.90198 0.0853,-0.0363 c 7.82661,-8.00023 19.06367,-17.22605 31.01529,-14.38439 9.65579,6.47286 7.49708,24.25521 20.71778,26.54392 13.50348,4.00026 26.75505,-9.59894 24.45152,-23.17001 -0.82789,-12.81308 -12.41728,-20.40222 -24.38939,-20.78954 z"
+       style="font-size:105.87248993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Saab;-inkscape-font-specification:Saab"
+       sodipodi:nodetypes="ccccccccccccc"
+       inkscape:export-filename="/home/rob/cxgn/Ambikon/doc/art/ambikon_logo.png"
+       inkscape:export-xdpi="600.25751"
+       inkscape:export-ydpi="600.25751" />
+    <path
        sodipodi:type="arc"
        style="fill:#ffffff;fill-opacity:1;stroke:none"
        id="path4199"
@@ -174,6 +183,9 @@
        sodipodi:rx="11.2"
        sodipodi:ry="5.5050845"
        d="m 381.17968,492.17236 a 11.2,5.5050845 0 1 1 -22.4,0 11.2,5.5050845 0 1 1 22.4,0 z"
-       transform="matrix(0.00500264,0.24145571,-1.8892649,-0.34816162,1295.4305,561.63036)" />
+       transform="matrix(0.04695322,0.24944302,-2.0187577,-0.03412027,1337.3365,407.28703)"
+       inkscape:export-filename="/home/rob/cxgn/Ambikon/doc/art/ambikon_logo.png"
+       inkscape:export-xdpi="600.25751"
+       inkscape:export-ydpi="600.25751" />
   </g>
 </svg>
