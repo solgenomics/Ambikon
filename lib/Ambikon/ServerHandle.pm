@@ -10,6 +10,14 @@ use Ambikon::Xref;
 use Ambikon::XrefSet;
 use Ambikon::Serializer;;
 
+=head1 SYNOPSIS
+
+  my $server_url = 'http://localhost:8000';
+  my $server = Ambikon::ServerHandle->new( base_url => 'http://localhost:8000' );
+  my $xrefs = $server->search_xrefs( %args );
+
+=cut
+
 =attr base_url
 
 The base URL at which to access ambikon API functions on the server.
@@ -100,6 +108,26 @@ Request xrefs JSON from the Ambikon server.  Accepts the same
 arguments as C<search_xrefs_html> above.  Decodes the JSON response
 and inflates objects (L<Ambikon::XrefSet>, etc).  Returns nothing if
 no response.
+
+Running a query like:
+
+  $server->search_xrefs( $query_1, $query_2 );
+
+Would return a data structure like:
+
+  {
+     $query_1 => {
+         subsite_name => {
+             xref_set => an Ambikon::XrefSet,
+             (some other things may also be in this hash)
+         },
+         ...
+     },
+     $query_2 => {
+        ...
+     },
+     ...
+  }
 
 =cut
 
