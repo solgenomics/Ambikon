@@ -35,7 +35,7 @@ like( $r_html, qr/Hi there/, 'tiny response rendered' );
 my $test_response_2;
 warning_like {
     $test_response_2 = $inflator->inflate( $json->decode( slurp( 't/data/xref_test_response_1.json' ) ) );
-} qr!could not inflate object.+GBrowse/DataSource\.pm!, 'got an inflation warning';
+} qr!could not inflate object.+DataSource!, 'got an inflation warning';
 
 #diag explain $test_response_2;
 $r_html = $v->xref_response_html( $test_response_2 );
